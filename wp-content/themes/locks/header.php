@@ -48,25 +48,6 @@ else if(get_query_var('pgg'))
 	<?php wp_head(); 
 	}
 ?>
-<!-- start callrail number swap -->
-<!--<script type="text/javascript" src="//cdn.callrail.com/companies/722823962/79097290a34fd926c7cf/12/swap.js"></script>-->
-<!-- end callrail number swap -->
-<!-- Google Tag Manager for YP SearchPro -->
-<!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N3QNVF"-->
-<!--height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>-->
-<!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':-->
-<!--new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],-->
-<!--j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=-->
-<!--'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);-->
-<!--})(window,document,'script','dataLayer','GTM-N3QNVF');</script>-->
-<!-- End Google Tag Manager -->
-<!-- start number replacer -->
-<!--<script type="text/javascript">-->
-<!--var vs_account_id = "CtjSalKM3X0jBQBR";-->
-<!--</script>-->
-<!--<script type="text/javascript" src="http://27.xg4ken.com/media/number-changer/voicestar/number-changer.php">-->
-<!--</script>-->
-<!-- end ad widget -->
 <script type="text/javascript">
 (function($) {
 $.noConflict();
