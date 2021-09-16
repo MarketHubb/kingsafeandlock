@@ -11,7 +11,17 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44674638-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-44674638-1');
+    </script>
+
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
 <?php 
 $bool_title=0;
 if(get_query_var( 'name' )=='blog' && get_query_var('page')=="")
