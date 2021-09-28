@@ -1,4 +1,13 @@
 /*region Global */
+.bg-light-blue {
+    background-color: #E6FBFF;
+}
+.text-red {
+    color: #7a193a;
+}
+.inline-block {
+    display: inline-block;
+}
 body {
     background-color: #fff !important;
 }
@@ -10,6 +19,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.jumbotron.position-bottom {
+    background-position: bottom;
 }
 .modal .jumbotron {
     border-bottom: 6px solid #7A193A;

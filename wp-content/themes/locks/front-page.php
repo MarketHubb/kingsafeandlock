@@ -17,8 +17,17 @@ get_header(); ?>
     <div id="primary" class="content-area">
         <a name="top"></a>
         <main id="main" class="site-main" role="main">
+
+            <!-- NEW -->
+
             <!--Header Image Template Part-->
-            <?php get_template_part( 'template-parts/content', 'header-hero'); ?>
+            <?php get_template_part( 'template-parts/home/content', 'hero'); ?>
+            <!-- Reviews -->
+            <?php get_template_part( 'template-parts/home/content', 'reviews'); ?>
+
+
+            <!--Header Image Template Part-->
+            <?php //get_template_part( 'template-parts/content', 'header-hero'); ?>
             <!--Bonded And Insured Template Part-->
             <?php get_template_part( 'template-parts/content', 'bonded-and-insured'); ?>
             <!--Hot Deals Template Part-->
