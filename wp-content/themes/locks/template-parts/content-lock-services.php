@@ -1,11 +1,18 @@
-<section id="lock-services">
+<section id="lock-services bg-white">
   <div class="container-skew">
     <div class="container-straight">
       <div class="container-fixed">
-        <h2><i class="material-icons" style="font-size:36px;">&#xE88D;</i> Lock Services</h2>
-        <p>
-          <?php the_field('text_above_the_images'); ?>
-        </p>
+<!--          <div class="container-fluid">-->
+<!--              <div class="wrapper">-->
+<!--                  <div class="row">-->
+<!--                      <div class="col-md-9 text-center justify-content-center">-->
+                          <h2 class="text-center display-4 font-weight-bold"> Lock Services</h2>
+                          <p class="lead text-center">
+                              <?php the_field('text_above_the_images'); ?>
+                          </p>
+<!--                      </div>-->
+
+
         <div id="services-container">
           <?php
 
