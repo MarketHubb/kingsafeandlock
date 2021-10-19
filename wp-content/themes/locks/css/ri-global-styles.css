@@ -1,3 +1,27 @@
+/*region Global */
+.no-borders {
+    border: none !important;
+}
+.text-red {
+    color: #7a193a;
+}
+.bg-blue {
+    background-color: #E6FBFF;
+}
+.bg-light-grey {
+    background-color: #eee;
+}
+.bg-red {
+    background-color: #7a193a;
+}
+.bg-white {
+    background-color: #fff !important;
+}
+/*endregion*/
+body div.site section#bonded-and-insued {
+    padding-bottom: 10rem !important;
+    background-color: #fff !important;
+}
 #pre-nav {
     display: none !important;
 }

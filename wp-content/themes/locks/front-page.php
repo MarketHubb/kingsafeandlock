@@ -24,6 +24,8 @@ get_header(); ?>
             <?php get_template_part( 'template-parts/home/content', 'hero'); ?>
             <!-- Reviews -->
             <?php get_template_part( 'template-parts/home/content', 'reviews'); ?>
+            <!-- Services -->
+            <?php get_template_part( 'template-parts/home/content', 'services'); ?>
 
 
             <!--Header Image Template Part-->
@@ -31,17 +33,17 @@ get_header(); ?>
             <!--Bonded And Insured Template Part-->
             <?php get_template_part( 'template-parts/content', 'bonded-and-insured'); ?>
             <!--Hot Deals Template Part-->
-            <?php get_template_part( 'template-parts/content', 'hot-deals'); ?>
+            <?php //get_template_part( 'template-parts/content', 'hot-deals'); ?>
             <!--Safes Template Part-->
-            <?php get_template_part( 'template-parts/content', 'safes-home'); ?>
+            <?php //get_template_part( 'template-parts/content', 'safes-home'); ?>
             <!-- Crime Section Template Part -->
-            <?php get_template_part( 'template-parts/content', 'crime-section'); ?>
+            <?php //get_template_part( 'template-parts/content', 'crime-section'); ?>
             <!--Testimonials Template Part-->
             <?php get_template_part( 'template-parts/content', 'testimonials'); ?>
             <!--Lock Services Template Part-->
             <?php get_template_part( 'template-parts/content', 'lock-services'); ?>
             <!--About Us Template Part-->
-            <?php get_template_part( 'template-parts/content', 'about-us'); ?>
+            <?php //get_template_part( 'template-parts/content', 'about-us'); ?>
         </main><!-- #main -->
     </div><!-- #primary -->
 
