@@ -31,14 +31,14 @@ if ($banner) {
                             <div class="d-flex justify-content-center align-items-center">
                                 <p class="d-inline-block mb-0">
                                     <a href="tel:713-465-0055"
-                                       class="font-weight-bolder  fs-large btn btn-outline-light">
+                                       class="font-weight-bolder  fs-large btn btn-light">
                                         713-465-0055
                                     </a>
                                 </p>
                                 <span class="mx-4 text-white">|</span>
                                 <p class="d-inline-block mb-0">
                                     <a href="https://www.google.com/maps/dir//8429+Katy+Fwy,+Houston,+TX+77024/@29.7833053,-95.4927188,17z/data=!4m16!1m7!3m6!1s0x8640c410e40f67e3:0x6963c056d846c752!2s8429+Katy+Fwy,+Houston,+TX+77024!3b1!8m2!3d29.7833053!4d-95.4905301!4m7!1m0!1m5!1m1!1s0x8640c410e40f67e3:0x6963c056d846c752!2m2!1d-95.4905301!2d29.7833053"
-                                    class="font-weight-bolder fs-large btn btn-outline-light">
+                                    class="font-weight-bolder fs-large btn btn-light">
                                         Directions to Store
                                     </a>
                                 </p>
