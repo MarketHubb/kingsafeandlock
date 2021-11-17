@@ -90,47 +90,6 @@ ul.left-aligned li {
     font-size: .85rem;
 }
 /****************************************
-*** Banner ***
-*****************************************/
-.masthead {
-    height: 60vh;
-    min-height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.banner-container {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.banner-container .content-section {
-    padding: 5rem 0;
-}
-.banner-overlay {
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.5);
-}
-.banner-overlay.dark {
-    background-color: rgba(0,0,0,.7);
-}
-.banner-headline {
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: -.04rem;
-}
-.banner-subheadline {
-    color: #fff;
-    line-height: 130%;
-    letter-spacing: .03rem;
-    font-size: 1.3rem;
-    font-weight: normal;
-}
-/****************************************
 *** MEDIA QUERIES - MINIMUMS ***
 *****************************************/
 
