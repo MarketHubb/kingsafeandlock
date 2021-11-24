@@ -11,6 +11,15 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+.bg-image-top {
+    background-position: top;
+}
+.bg-image-center {
+    background-position: center;
+}
+.bg-image-bottom {
+    background-position: bottom;
+}
 .banner-container .content-section {
     padding: 5rem 0;
 }

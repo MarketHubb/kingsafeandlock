@@ -6,11 +6,12 @@ if ($banner) {
     $bg_image = $banner['background_image'];
     $heading = $banner['heading'];
     $description = $banner['description'];
+    $image_align_class = ($banner['image_align']) ? 'bg-image-' . strtolower($banner['image_align']) : '';
 }
 ?>
 <!-- Page Title (Banner) -->
 <div class="container-fluid p-0">
-    <div class="banner-container"
+    <div class="banner-container <?php echo $image_align_class; ?>"
          style="background-image: <?php echo $linear_gradient; ?>,
                  url(<?php echo $bg_image; ?>)">
         <div class="">
@@ -19,12 +20,34 @@ if ($banner) {
                 <div class="row h-100 align-items-center my-5">
                     <div class="col-12 text-center">
 
+                        <!-- Headline -->
                         <?php if ($banner['heading']) { ?>
                             <h1 class="banner-headline mb-2"><?php echo $banner['heading']; ?></h1>
                         <?php } ?>
 
+                        <!-- Description -->
                         <?php if ($banner['description']) { ?>
                             <p class="banner-subheadline lead fs-large"><?php echo $banner['description']; ?></p>
+                        <?php } ?>
+
+                        <!-- Button -->
+                        <?php if (strtolower($banner['button_type']) !== 'none') { ?>
+
+                            <?php
+                            if ($banner['button_type'] === 'Custom') {
+                                $button_url = $banner['button_url'];
+                            } else {
+                                $button_url = $banner['button_link'];
+                            }
+                            ?>
+
+                            <?php if ($banner['button_type'] !== 'None') { ?>
+                                <a class="btn btn-primary btn-lg text-white px-5 bg-orange no-borders lead" href="<?php echo $button_url; ?>" role="button">
+                                    <?php echo $banner['button_text']; ?>
+                                    <i class="fas fa-long-arrow-right ml-1"></i>
+                                </a>
+                            <?php } ?>
+
                         <?php } ?>
 
                         <?php if (is_page(3477)) { ?>
