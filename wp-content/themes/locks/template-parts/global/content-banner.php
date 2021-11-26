@@ -42,7 +42,7 @@ if ($banner) {
                             ?>
 
                             <?php if ($banner['button_type'] !== 'None') { ?>
-                                <a class="btn btn-primary btn-lg text-white px-5 bg-orange no-borders lead" href="<?php echo $button_url; ?>" role="button">
+                                <a class="btn btn-primary btn-lg btn-orange shadow text-white px-5 bg-orange no-borders lead font-weight-bold" href="<?php echo $button_url; ?>" role="button">
                                     <?php echo $banner['button_text']; ?>
                                     <i class="fas fa-long-arrow-right ml-1"></i>
                                 </a>

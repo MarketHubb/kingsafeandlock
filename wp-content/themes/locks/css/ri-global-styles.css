@@ -1,4 +1,7 @@
 /*region Global */
+.btn-orange {
+    background-color: #ce742e !important;
+}
 ul.flush {
     padding-inline-start: 0;
     margin-left: 0;
