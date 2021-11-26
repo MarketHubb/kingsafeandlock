@@ -162,6 +162,15 @@ body .gform_wrapper label.gfield_label {
 
 /*region Media Queries */
 
+@media (max-width: 768px) {
+    header.site-header div#pre-nav {
+        display: inherit !important;
+    }
+    .scrolling-brand-phone {
+        display: none !important;
+    }
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) { }
 
