@@ -6,7 +6,7 @@
             if( have_rows('panels') ):
                 $p = '';
                 while ( have_rows('panels') ) : the_row();
-                    $p .= '<div class="col-md-4">';
+                    $p .= '<div class="col-md-4 mb-4">';
                     $p .= '<div class="card bg-white shadow h-100">';
                     $p .= '<img src="' . get_sub_field('image') . '" alt="">';
                     $p .= '<div class="card-body px-5">';

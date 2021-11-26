@@ -17,8 +17,9 @@ if ($banner) {
         <div class="">
             <div class="container h-100 content-section">
 
-                <div class="row h-100 align-items-center my-5">
-                    <div class="col-12 text-center">
+                <div class="row h-100 align-items-center my-0 my-md-4 my-lg-5">
+                    <div class="col-md-12 text-center">
+                        <div class="px-4">
 
                         <!-- Headline -->
                         <?php if ($banner['heading']) { ?>
@@ -27,7 +28,7 @@ if ($banner) {
 
                         <!-- Description -->
                         <?php if ($banner['description']) { ?>
-                            <p class="banner-subheadline lead fs-large"><?php echo $banner['description']; ?></p>
+                            <p class="banner-subheadline lead fs-large mb-5"><?php echo $banner['description']; ?></p>
                         <?php } ?>
 
                         <!-- Button -->
@@ -42,7 +43,7 @@ if ($banner) {
                             ?>
 
                             <?php if ($banner['button_type'] !== 'None') { ?>
-                                <a class="btn btn-primary btn-lg btn-orange shadow text-white px-5 bg-orange no-borders lead font-weight-bold" href="<?php echo $button_url; ?>" role="button">
+                                <a class="btn btn-primary btn-lg btn-orange shadow text-white px-md-5 bg-orange no-borders lead font-weight-bold" href="<?php echo $button_url; ?>" role="button">
                                     <?php echo $banner['button_text']; ?>
                                     <i class="fas fa-long-arrow-right ml-1"></i>
                                 </a>
@@ -67,7 +68,7 @@ if ($banner) {
                                 </p>
                             </div>
                         <?php } ?>
-
+                        </div>
                     </div>
                 </div>
             </div>

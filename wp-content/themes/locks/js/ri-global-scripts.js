@@ -32,4 +32,19 @@
         modal.find('#modal-hero').html(hero);
     })
 
+    $(window).on("resize", function (e) {
+        checkScreenSize();
+    });
+
+    checkScreenSize();
+
+    function checkScreenSize(){
+        var newWindowWidth = $(window).width();
+        if (newWindowWidth < 768) {
+            let headerHeight = $('#masthead').height();
+            $('#content').css('padding-top', headerHeight);
+            $('#primary').css('margin-top', 0);
+        }
+    }
+
 })( jQuery );
