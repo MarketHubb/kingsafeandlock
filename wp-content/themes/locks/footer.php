@@ -88,9 +88,16 @@
 
 </div><!-- #page -->
 
-<?php if (is_page(3080)) {
+<?php
+if (is_shop() || is_archive() || is_singular('product') || is_page(3048)) {
+    get_template_part('template-parts/modals/content', 'product');
+}
+if (is_page(3080)) {
     get_template_part('template-parts/global/content', 'modal');
-} ?>
+}
+?>
+
+
 
 
 

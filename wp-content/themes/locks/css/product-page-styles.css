@@ -41,6 +41,20 @@
 /****************************************
 *** Product List ***
 *****************************************/
+/* WooCommerce Overrides */
+.woocommerce-notices-wrapper, .woocommerce-result-count, .woocommerce-ordering {
+    display: none;
+}
+.product-list-container {
+    border-radius: 3px;
+}
+.product-list-container h2 {
+    color: #7A193A !important;
+}
+.product-list-container img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 .product-grids-container {
     margin: 1rem 0;
 }
@@ -51,11 +65,18 @@
     border-radius: 3px;
     background-color: #E6FBFF;
 }
+.product-container:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 25px -10px rgba(51,71,91,0.5) !important;
+}
+.inquiry-container {
+    z-index: 1040;
+    position: relative;
+}
 .product-list-name {
     color: #333;
     line-height: 130%;
     font-weight: bold;
-    font-size: 1.2rem;
     text-transform: uppercase;
     margin-bottom: 0;
 }
@@ -65,17 +86,28 @@
     font-weight: bold;
     color: #555;
 }
-.product-container a.product-cta-btn {
+.product-container img {
+    max-height: 300px;
+}
+.product-cta-btn, .gform_button {
+    border: none;
     letter-spacing: .03rem;
-    background-color: #7A193A;
-    color: #fff;
-    border-radius: 4px;
+    background-color: #7A193A !important;
+    color: #fff !important;
+    border-radius: 4px !important;
     font-weight: bold;
-    text-transform: uppercase;
     margin-top: 1.5rem;
     display: inline-block;
     padding: .3em 1em;
     font-size: .9em;
+    line-height: 30px;
+}
+.gform_button {
+    line-height: 1.5 !important;
+}
+.product-cta-btn:hover, .gform_button:hover {
+    background-color: #560420;
+    box-shadow: none;
 }
 ul.left-aligned {
     padding-inline-start: 0;
@@ -135,6 +167,9 @@ ul.left-aligned li {
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+    .woocommerce-products-header {
+        display: none;
+    }
     .banner-container .content-section {
         padding-bottom: 3rem;
         padding-left: 1rem;

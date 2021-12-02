@@ -68,7 +68,7 @@ foreach ($gun_safe_terms as $term_id) {
                 $content .= '</div>';
                 $content .= '<div class="row product-grids-container">';
             }
-            $content .= '<div class="col-md-4 text-center">';
+            $content .= '<div class="col-md-4 text-center mb-3">';
             $content .= '<div class="product-container">';
 
             $product_manufacturer  = get_field('category_safes_manufacturer', $acf_field_param) . ' ';
@@ -76,12 +76,25 @@ foreach ($gun_safe_terms as $term_id) {
             $fire_rating = get_field('category_safes_fire_rating', $acf_field_param) . ' Minute Fire Rating ';
             $gun_capacity = get_field('post_product_gun_gun_capacity') . ' Gun Capacity';
 
-            $content .= '<h4 class="product-list-name">' . $product_manufacturer . ' ' . $product_num . '</h4>';
+            $content .= '<h4 class="product-list-name text-dark font-weight-bold">' . $product_manufacturer . ' ' . $product_num . '</h4>';
             $content .= '<p class="product-list-fire-rating">' . $gun_capacity . '</p>';
             $content .= '<img src="' . get_the_post_thumbnail_url() . '"/>';
-            $content .= '<div class="text-center">';
-            $content .= '<a href="' . get_permalink() . '" class="product-cta-btn">' . 'View ' . $product_num . ' Details <i class="fas fa-long-arrow-right ml-1"></i>' . '</a>';
-            $content .= '</div></div></div>';
+            $content .= '<div class="text-center inquiry-container">';
+
+//            $attr = get_safe_attributes($post->ID);
+//            $content .= '<button type="button" class="product-cta-btn" ';
+//            $content .= 'data-toggle="modal" ';
+//            $content .= 'data-target="#productModal" ';
+//            $content .= 'data-safeimage="' . get_the_post_thumbnail_url() . '" ';
+//            $content .= 'data-safetype="' . $attr['safe_type'] . '" ';
+//            $content .= 'data-safename="' . $key . ' ' . get_the_title() . '">';
+//            $content .= 'Product Inquiry</button>';
+
+            $content .= get_product_inquiry_btn($post->ID, 'Product Inquiry <i class="fas fa-long-arrow-right ml-1"></i>');
+            $content .= '</div>';
+
+            $content .= '<a href="' . get_permalink() . '" class="stretched-link"></a>';
+            $content .= '</div></div>';
 
             $i++;
         endwhile;

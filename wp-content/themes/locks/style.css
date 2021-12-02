@@ -1,4 +1,4 @@
-
+/*
 Theme Name: locks
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -79,16 +79,12 @@ div.related-topics ul.rel_posts_links li p, div.related-topics ul.rel_posts_link
 }
 .bannerless-heading-container > .container-fixed h1 {
 	display: inline-block;
-	border-left: 4px solid #7a193a;
 	font-weight: bold;
-	text-transform: uppercase;
 	padding: 2rem;
-	font-size: 4rem;
-	color: #7a193a;
+	font-size: 3rem;
 	margin-top: 4rem;
 	margin-bottom: 0;
 	line-height: 1;
-	border-right: 4px solid #7a193a;
 	background: #7a193a;
 	color: #fff;
 }

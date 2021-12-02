@@ -1,4 +1,10 @@
 /*region Global */
+header.site-header.is-scrolling {
+    z-index: 1049;
+}
+a,button, input[type="submit"] {
+    font-family: "Source Sans Pro";
+}
 .btn-orange {
     background-color: #ce742e !important;
 }

@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/content.php';
 require_once 'includes/ajax.php';
+require_once 'includes/safes.php';
 
 /**
  * locks functions and definitions.
@@ -110,9 +111,9 @@ function locks_scripts() {
 	wp_enqueue_script( 'locks-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '20151217', true );
 	wp_enqueue_script( 'customimr', get_template_directory_uri() . '/js/custom-imr.js', array('jquery'), '20151216', true );
-	
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151216', true );
 	wp_enqueue_script( 'locks-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
     if ( is_singular( 'safe' ) ) {
         wp_enqueue_style( 'magnific-popup-style', get_template_directory_uri() . '/css/magnific-popup.css' );
         wp_enqueue_style( 'responsive-tables-style', get_template_directory_uri() . '/css/responsive-tables.css' );
@@ -146,6 +147,14 @@ wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
  */
 function ri_conditional_script_loading()
 {
+    if (is_shop() || is_archive() || is_singular('product') || is_page(3048)) {
+        wp_enqueue_script('safe-scripts', get_stylesheet_directory_uri() . '/js/ri-safe-scripts.js', ['jquery'], '5.1.0', true);
+        wp_enqueue_style('safe-styles', get_stylesheet_directory_uri() . '/css/ri-form-styles.css');
+        wp_enqueue_style('product-page-styles');
+        wp_enqueue_style('bootstrap-styles');
+        wp_enqueue_script('bootstrap-scripts');
+    }
+
     if (!is_admin()) {
        wp_enqueue_style('ri-global-styles');
        wp_enqueue_style('ri-banner-styles');
@@ -154,11 +163,6 @@ function ri_conditional_script_loading()
        wp_enqueue_script('bootstrap-scripts');
        wp_enqueue_script('ri-global-scripts');
     }
-   if (is_page(3048)) {
-       wp_enqueue_style('bootstrap-styles');
-       wp_enqueue_style('product-page-styles');
-       wp_enqueue_script('bootstrap-scripts');
-   }
 }
 add_action('wp_enqueue_scripts', 'ri_conditional_script_loading');
 
