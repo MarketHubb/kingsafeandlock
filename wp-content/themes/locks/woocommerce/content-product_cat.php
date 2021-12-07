@@ -32,7 +32,7 @@ $category_link = get_term_link($category->term_id, 'product_cat');
         <h4 class="product-list-name text-black font-weight-bold"><?php echo $category->name; ?></h4>
         <img src="<?php echo $image; ?>" />
         <div class="text-center inquiry-container">
-            <?php echo get_product_inquiry_btn($category_link, 'View All Safes <i class="fas fa-long-arrow-right ml-1"></i>'); ?>
+            <a href="<?php echo $category_link; ?>" type="button" class="btn product-cta-btn shadow">View All Safes <i class="fas fa-long-arrow-right ml-1"></i></a>
             <p class="mt-2"><em><?php echo $category->category_count; ?> in stock</em></p>
         </div>
         <a href="<?php echo $category_link; ?>" class="stretched-link"></a>
