@@ -1,5 +1,5 @@
 <?php
-$image = get_home_url() . '/wp-content/uploads/2021/09/Edited-Banner-1.jpg';
+ $image = get_field('home_background_image', $post->ID);
 $bg_opacity = $hero['page_banner_image_opacity'] > 0 ? $hero['page_banner_image_opacity'] : .01;
 $linear_gradient = 'linear-gradient(to bottom, rgba(0,0,0,' .  $bg_opacity . ') 0%,rgba(0,0,0,' . $bg_opacity . ') 100%)';
 $text_align_class = $hero['page_banner_text_align'] = 'center' ? 'text-center' : '';
@@ -13,15 +13,22 @@ $text_align_class = $hero['page_banner_text_align'] = 'center' ? 'text-center' :
     <div class="container-fluid  py-3">
         <div class="wrapper">
             <div class="row justify-content-end py-5">
-                <div class="col-md-7 py-5 pe-lg-0 pt-lg-5 align-items-center rounded ">
+                <div class="col-md-7 py-5 pe-lg-0 pt-lg-5 align-items-center rounded bg-opacity-white">
                     <p class="px-4 mb-2 inline-block rounded-pill font-weight-bold mb-0 bg-light-blue text-red">American Security Safes <span class="px-3">|</span> 24x7 Locksmiths<span class="px-3">|</span>Safe Moving & Repair</p>
-                    <h1 class="display-2  mb-3 mt-0 text-white font-weight-bold hero-headline text-uppercase">King Safe & Lock</h1>
-                    <p class="lead font-weight-normal text-white hero-subheadline">With over 400 safes in stock, including over models of gun safes, King Safe and Lock™ has the perfect safe to fit every need and every budget. We carry the best gun safes Houston has to offer. We can deliver and install high security safes, home safes, jewelry safes, fire safes, commercial safes and gun safes to clients in Houston and the surrounding areas.
+                    <h1 class="display-2  mb-3 mt-0 text-white font-weight-bold hero-headline text-uppercase"><?php the_field('home_heading'); ?></h1>
+                    <p class="hero-subheadline mb-4 promotion text-white"><strong><?php the_field('home_callout'); ?></strong></p>
+                    <p class="lead font-weight-normal text-white hero-subheadline"><?php the_field('home_banner_description'); ?></p>
 
+                    <p class="lead lead-small">
+                        <?php if (get_field('home_button_text') && get_field('home_button_link')) { ?>
+                            <a href="<?php echo get_field('home_button_link') ?>" class="btn product-cta-btn shadow">
+                                <?php the_field('home_button_text'); ?>
+                                <i class="fas fa-long-arrow-right ml-1"></i>
+                            </a>
+                        <?php } ?>
                     </p>
+
                 </div>
-            </div>
-            <div class="row">
             </div>
         </div>
     </div>

@@ -89,26 +89,6 @@
 .product-container img {
     max-height: 300px;
 }
-.product-cta-btn, .gform_button {
-    border: none;
-    letter-spacing: .03rem;
-    background-color: #7A193A !important;
-    color: #fff !important;
-    border-radius: 4px !important;
-    font-weight: bold;
-    margin-top: 1.5rem;
-    display: inline-block;
-    padding: .3em 1em;
-    font-size: .9em;
-    line-height: 30px;
-}
-.gform_button {
-    line-height: 1.5 !important;
-}
-.product-cta-btn:hover, .gform_button:hover {
-    background-color: #560420;
-    box-shadow: none;
-}
 ul.left-aligned {
     padding-inline-start: 0;
     margin-left: 0;
