@@ -6,24 +6,25 @@ $text_align_class = $hero['page_banner_text_align'] = 'center' ? 'text-center' :
 
 ?>
 
-<div id="hero-banner" class="jumbotron position-bottom bg-cover text-white px-sm-2"
+<div id="hero-banner" class="jumbotron position-bottom bg-cover text-white px-4 px-lg-0"
      style="background-image: <?php echo $linear_gradient; ?>,
          url(<?php echo $image; ?>)">
 
-    <div class="container-fluid  py-3">
+    <div class="container-fluid py-3">
         <div class="wrapper">
-            <div class="row justify-content-end py-5">
-                <div class="col-md-7 py-5 pe-lg-0 pt-lg-5 align-items-center rounded bg-opacity-white">
-                    <p class="px-4 mb-2 inline-block rounded-pill font-weight-bold mb-0 bg-light-blue text-red">American Security Safes <span class="px-3">|</span> 24x7 Locksmiths<span class="px-3">|</span>Safe Moving & Repair</p>
-                    <h1 class="display-2  mb-3 mt-0 text-white font-weight-bold hero-headline text-uppercase"><?php the_field('home_heading'); ?></h1>
-                    <p class="hero-subheadline mb-4 promotion text-white"><strong><?php the_field('home_callout'); ?></strong></p>
-                    <p class="lead font-weight-normal text-white hero-subheadline"><?php the_field('home_banner_description'); ?></p>
+            <div class="row justify-content-center justify-content-lg-end py-5">
+                <div class="col-md-7 p-4 p-lg-5  align-items-center rounded bg-opacity-white shadow">
+                    <p class="d-none d-lg-block fw-bold text-red"><?php the_field('home_subheading'); ?></p>
+                    <p class="d-block d-lg-none text-center fw-bold text-red"><?php the_field('home_mobile_subheading'); ?></p>
+                    <h1 class="display-2 lh-1 text-red my-3  fw-bolder hero-headline text-uppercase"><?php the_field('home_heading'); ?></h1>
+                    <p class="hero-subheadline mb-4 promotion text-dark"><strong><?php the_field('home_callout'); ?></strong></p>
+                    <p class="lead text-dark mb-4 hero-subheadline"><?php the_field('home_banner_description'); ?></p>
 
-                    <p class="lead lead-small">
+                    <p class="lead lead-small mb-0 pb-0">
                         <?php if (get_field('home_button_text') && get_field('home_button_link')) { ?>
                             <a href="<?php echo get_field('home_button_link') ?>" class="btn product-cta-btn shadow">
                                 <?php the_field('home_button_text'); ?>
-                                <i class="fas fa-long-arrow-right ml-1"></i>
+                                <i class="fas fa-long-arrow-right ms-1"></i>
                             </a>
                         <?php } ?>
                     </p>

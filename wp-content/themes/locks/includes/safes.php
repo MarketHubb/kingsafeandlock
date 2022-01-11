@@ -37,7 +37,7 @@ function get_product_inquiry_btn($post_id, $btn_text)
     $attr = get_safe_attributes($post_id);
 
     $btn  = '<button type="button" class="btn product-cta-btn shadow" ';
-    $btn .= 'data-toggle="modal" data-target="#productModal" ';
+    $btn .= 'data-bs-toggle="modal" data-bs-target="#productModal" ';
     $btn .= 'data-safeimage="' . $image[0] . '" ';
     $btn .= 'data-safetype="' . $attr['safe_type'] . '" ';
     $btn .= 'data-safename="' . get_the_title($post_id) . '">';

@@ -191,6 +191,13 @@ body .gform_wrapper label.gfield_label {
 /*region Media Queries */
 
 @media (max-width: 768px) {
+    .section-heading {
+        font-weight: bold;
+        margin: 2rem 0;
+        font-size: 9vw;
+        text-transform: none;
+        line-height: 1.1;
+    }
     header.site-header div#pre-nav {
         display: inherit !important;
     }

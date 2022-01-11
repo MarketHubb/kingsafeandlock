@@ -1,5 +1,5 @@
 .bg-opacity-white {
-    background: rgba(255,255,255,.4);
+    background: rgba(255,255,255,.9);
     padding-left: 2rem;
 }
 .hero-subheadline {
@@ -57,4 +57,19 @@
 }
 .banner {
     margin: 2rem 0;
+}
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .jumbotron p.subheading {
+        background-color: transparent;
+    }
+
+    .jumbotron h1 {
+        font-size: 16vw;
+    }
+
+    .jumbotron p.lead {
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
 }

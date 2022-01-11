@@ -31,10 +31,10 @@ get_header(); ?>
 
                 ?>
 
-                <!-- Reviews -->
-                <?php get_template_part( 'template-parts/home/content', 'reviews'); ?>
                 <!-- Services -->
                 <?php get_template_part( 'template-parts/home/content', 'services'); ?>
+                <!-- Reviews -->
+                <?php get_template_part( 'template-parts/home/content', 'reviews'); ?>
 
 
                 <!--Header Image Template Part-->
