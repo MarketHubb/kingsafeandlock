@@ -59,6 +59,7 @@
     margin: 1rem 0;
 }
 .product-container {
+    position: relative;
     padding-top: 2rem;
     padding-bottom: 2rem;
     box-shadow: 0 10px 25px -10px rgba(51,71,91,0.25) !important;
