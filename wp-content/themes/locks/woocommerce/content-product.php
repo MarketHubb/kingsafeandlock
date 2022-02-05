@@ -29,7 +29,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <div class="product-container h-100 px-4 py-5">
         <h4 class="product-list-name text-black font-weight-bold"><?php echo get_the_title($post->ID); ?></h4>
         <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" />
-        <div class="text-center inquiry-container">
+        <div class="text-center inquiry-container mt-3">
             <?php echo get_product_inquiry_btn($post->ID, 'Product Inquiry <i class="fas fa-long-arrow-right ml-1"></i>'); ?>
         </div>
         <a href="<?php echo get_permalink($post->ID); ?>" class="stretched-link"></a>

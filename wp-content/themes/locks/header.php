@@ -206,7 +206,7 @@
                     </a>
                 </div>
                 <div id="brand-phone" class="test-class">
-                    <h3>Call for Pricing</h3>
+                    <h3 class="mb-2">Call for Pricing</h3>
                     <p><a href="tel:713-465-0055">713-465-0055</a></p>
                 </div>
                 <div id="menu-responsive">

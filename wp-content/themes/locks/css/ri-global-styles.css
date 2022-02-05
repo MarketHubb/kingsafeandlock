@@ -217,9 +217,9 @@ body .gform_wrapper label.gfield_label {
         text-transform: none;
         line-height: 1.1;
     }
-    header.site-header div#pre-nav {
-        display: inherit !important;
-    }
+    /*header.site-header div#pre-nav {*/
+    /*    display: inherit !important;*/
+    /*}*/
     .scrolling-brand-phone {
         display: none !important;
     }

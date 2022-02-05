@@ -43,7 +43,7 @@
 }
 /* Product Name (Auto Filled) */
 .product-field textarea {
-    height: 3rem !important;
+    min-height: 3rem !important;
     border: none;
     font-weight: bold;
     padding-top: 0 !important;

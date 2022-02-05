@@ -79,7 +79,7 @@ foreach ($gun_safe_terms as $term_id) {
             $content .= '<h4 class="product-list-name text-dark font-weight-bold">' . $product_manufacturer . ' ' . $product_num . '</h4>';
             $content .= '<p class="product-list-fire-rating">' . $gun_capacity . '</p>';
             $content .= '<img src="' . get_the_post_thumbnail_url() . '"/>';
-            $content .= '<div class="text-center inquiry-container">';
+            $content .= '<div class="text-center inquiry-container mt-3">';
 
 //            $attr = get_safe_attributes($post->ID);
 //            $content .= '<button type="button" class="product-cta-btn" ';
