@@ -43,7 +43,6 @@
 }
 /* Product Name (Auto Filled) */
 .product-field textarea {
-    min-height: 3rem !important;
     border: none;
     font-weight: bold;
     padding-top: 0 !important;
@@ -126,7 +125,18 @@ body .gform_wrapper .top_label div.ginput_container {
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {}
 /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {}
+@media (max-width: 991.98px) {
+    #productModal #field_2_7 label {
+        display: none;
+    }
+    #productModal #field_2_7 textarea {
+        padding-left: 0 !important;
+        font-size: 1.3rem !important;
+        padding-top: 0 !important;
+        text-align: center;
+        height: 80px;
+    }
+}
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {}
 /* Extra small devices (portrait phones, less than 576px) */
