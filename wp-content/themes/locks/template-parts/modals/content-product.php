@@ -2,11 +2,11 @@
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header">
                 <div class="container-fluid">
-                    <div class="row justify-content-center">
+                    <div class="row">
                         <div class="col-12 col-md-9">
-                            <h2 class="modal-title font-weight-bold text-red mb-0 pb-0" id="exampleModalLabel">King Safe & Lock</h2>
+                            <h2 class="modal-title fw-bold text-red mb-0 pb-0" id="exampleModalLabel">King Safe & Lock</h2>
                             <p class="mb-0 small"><em>Proudly serving Houston & surrounding communities</em></p>
                         </div>
                     </div>
@@ -21,15 +21,15 @@
                         <div class="col-md-12">
                             <ul class="list-group list-group-horizontal flush">
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success mr-3"></i>Pricing
+                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Pricing
                                     </h5>
                                 </li>
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success mr-3"></i>Delivery
+                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Delivery
                                     </h5>
                                 </li>
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success mr-3"></i>Support
+                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Support
                                     </h5>
                                 </li>
                             </ul>

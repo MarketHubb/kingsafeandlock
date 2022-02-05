@@ -191,6 +191,25 @@ body .gform_wrapper label.gfield_label {
 /*region Media Queries */
 
 @media (max-width: 768px) {
+    .modal-header button.close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 1.5rem;
+        padding: 0.5rem 0.75rem;
+    }
+    #productModal .list-group > .list-group-item {
+        text-align: center;
+    }
+    #productModal .list-group > .list-group-item h5 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    #productModal #field_2_7 textarea {
+        padding-left: 0 !important;
+        font-size: 1.3rem !important;
+        padding-top: 0 !important;
+    }
     .section-heading {
         font-weight: bold;
         margin: 2rem 0;
