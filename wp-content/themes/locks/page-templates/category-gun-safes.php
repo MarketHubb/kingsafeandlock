@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php
 $tax_term = 'product_cat';
-$gun_safe_terms = [59,47, 36, 35,38];
+$gun_safe_terms = [59,60, 36,38,61, 35];
 $content = '';
 foreach ($gun_safe_terms as $term_id) {
     $term =  get_terms([
@@ -15,7 +15,12 @@ foreach ($gun_safe_terms as $term_id) {
     ]);
     $acf_field_param = $tax_term . '_' . $term[0]->term_id;
     $cat_name = 'AMSEC ' . get_field('categoy_safes_category_name', $acf_field_param);
-    $cat_attr = get_field('category_safes_fire_rating', $acf_field_param) . ' Minute Fire Proof Gun Safes';
+
+    if ($term_id !== 61) {
+        $cat_attr = get_field('category_safes_fire_rating', $acf_field_param) . ' Minute Fire Proof Gun Safes';
+    } else {
+        $cat_attr = get_field('category_safes_fire_rating', $acf_field_param);
+    }
 
     $content .= '<div class="bg-white">';
     $content .= '<div class="safe-category-container">';
@@ -23,7 +28,7 @@ foreach ($gun_safe_terms as $term_id) {
     // Category Name
     $content .= '<div class="row category-name-container">';
     $content .= '<div class="col">';
-    $content .= '<h2>' . $cat_name . '</h2>';
+    $content .= '<h2 data-termid="' . $term_id . '">' . $cat_name . '</h2>';
     $content .= '<h3>' . $cat_attr . '</h3>';
     $content .= '<p>' . get_field('category_safes_description', $acf_field_param) . '</p>';
     $content .= '</div></div>';
