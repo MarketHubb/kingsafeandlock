@@ -14,7 +14,7 @@
                         $s .= '<p class="lead">' . get_sub_field('description') . '</p>';
                         $s .= '<img src="' . get_sub_field('image') . '" class="rounded shadow" />';
                         $s .= '<p class="lead lead-small mb-0 pb-0">';
-                        $s .= '<a href="' . get_sub_field('page_link') . '" class="btn product-cta-btn shadow mt-4 w-100">';
+                        $s .= '<a href="' . get_sub_field('page_link') . '" class="btn product-cta-btn shadow mt-4 w-100 test">';
                         $s .= 'View ' . get_sub_field('heading') . '<i class="fas fa-long-arrow-right ms-1"></i>';
                         $s .= '</a></p>';
                         $s .= '</div></div></div>';

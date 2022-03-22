@@ -147,12 +147,15 @@ wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
  */
 function ri_conditional_script_loading()
 {
+    // Locksmith
+    if (is_page(3929)) {
+        wp_enqueue_style('locksmith-styles', get_stylesheet_directory_uri() . '/css/ri-locksmith-styles.css');
+    }
+
     if (is_shop() || is_archive() || is_singular('product') || is_page(3048)) {
         wp_enqueue_script('safe-scripts', get_stylesheet_directory_uri() . '/js/ri-safe-scripts.js', ['jquery'], '5.1.0', true);
         wp_enqueue_style('safe-styles', get_stylesheet_directory_uri() . '/css/ri-form-styles.css');
         wp_enqueue_style('product-page-styles');
-//        wp_enqueue_style('bootstrap-styles');
-//        wp_enqueue_script('bootstrap-scripts');
     }
 
     if (!is_admin()) {
@@ -164,7 +167,6 @@ function ri_conditional_script_loading()
         wp_enqueue_style('font-awesome-pro');
         wp_enqueue_style('modal');
         wp_enqueue_script('ri-global-scripts');
-//        wp_enqueue_script('bootstrap-scripts');
     }
 }
 add_action('wp_enqueue_scripts', 'ri_conditional_script_loading');

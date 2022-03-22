@@ -9,6 +9,30 @@ if ($banner) {
     $image_align_class = ($banner['image_align']) ? 'bg-image-' . strtolower($banner['image_align']) : '';
 }
 ?>
+<!-- Appointment Alert Locksmith -->
+<?php if (is_page(3929)) {  ?>
+<div class="bg-red">
+    <div class="container-fluid">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="lead d-none d-md-block text-white hero-alert my-0 py-2">
+                        Appointments still available today - Call Now!
+                        <span class="hero-phone-alert-container">
+                                <a class="hero-phone hero-phone-alert fw-bold text-white ms-2 text-decoration-underline" href="tel:713-522-5555">                                     713-522-5555
+                                </a>
+                            </span>
+                    </p>
+                    <p class="d-block d-md-none text-white hero-alert my-0 py-2">
+                        <?php $openings = rand(2, 4); ?>
+                        <span class="border-bottom border-2"><?php  echo $openings; ?> openings</span> still available today, book now!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
 <!-- Page Title (Banner) -->
 <div class="container-fluid p-0">
     <div class="banner-container <?php echo $image_align_class; ?>"
@@ -17,9 +41,31 @@ if ($banner) {
         <div class="">
             <div class="container h-100 content-section">
 
-                <div class="row h-100 align-items-center my-0 my-md-4 my-lg-5">
-                    <div class="col-md-12 text-center">
+                <div class="row h-100 justify-content-center align-items-center my-0 my-md-4 my-lg-5">
+                    <div class="col-md-10 text-center">
                         <div class="px-4">
+
+                        <!-- Locksmith Only -->
+                        <?php if (is_page(3929)) { ?>
+                            <div class="row justify-content-center mb-0 mb-md-4" id="locksmith-banner-services">
+                                <div class="col-12 col-md-10 col-lg-8">
+                                    <ul class="list-group list-group-flush list-group-horizontal bg-none py-md-1">
+                                        <li class="list-group-item flex-fill bg-none text-center pb-0 border-0">
+                                            <i class=" fa-lg fas fa-check-circle d-block mx-auto"></i>
+                                            <p class="bg-light-blue-opacity text-white fw-bolder  border border-1 rounded-pill py-1 px-4 px-md-4 px-lg-5 mb-0 d-inline-block">Access</p>
+                                        </li>
+                                        <li class="list-group-item flex-fill bg-none text-center pb-0 border-0">
+                                            <i class=" fa-lg fas fa-check-circle d-block mx-auto"></i>
+                                            <p class="bg-light-blue-opacity text-white fw-bold  border border-1 rounded-pill py-1 px-4 px-md-4 px-lg-5 mb-0 d-inline-block">Keys</p>
+                                        </li>
+                                        <li class="list-group-item flex-fill bg-none text-center pb-0 border-0">
+                                            <i class=" fa-lg fas fa-check-circle d-block mx-auto"></i>
+                                            <p class="bg-light-blue-opacity text-white fw-bold  border border-1 rounded-pill py-1 px-4 px-md-4 px-lg-5 mb-0 d-inline-block">Locks</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php } ?>
 
                         <!-- Headline -->
                         <?php if ($banner['heading']) { ?>
@@ -32,7 +78,11 @@ if ($banner) {
                         <?php } ?>
 
                         <!-- Button -->
-                        <?php if (strtolower($banner['button_type']) !== 'none') { ?>
+
+                        <!-- NOT Locksmith-->
+                        <?php if (!is_page(3929)) { ?>
+
+                            <?php if (strtolower($banner['button_type']) !== 'none') { ?>
 
                             <?php
                             if ($banner['button_type'] === 'Custom') {
@@ -51,6 +101,14 @@ if ($banner) {
 
                         <?php } ?>
 
+                    <!-- Is Locksmith -->
+                    <?php } elseif(is_page(3929)) { ?>
+
+                            <button type="button" class="btn btn-primary btn-lg bg-light-blue shadow px-md-5 no-borders" data-bs-toggle="modal" data-bs-target="#locksmithModal"> Book a Locksmith Now<i class="fas fa-long-arrow-right ms-2"></i></button>
+                            <p class="text-center text-white fst-italic mt-2">Get an appointment today <br class="d-block d-lg-none"> or schedule for a later date</p>
+
+                    <?php } ?>
+
                         <?php if (is_page(3477)) { ?>
                             <div class="d-flex justify-content-center align-items-center">
                                 <p class="d-inline-block mb-0">
@@ -68,6 +126,8 @@ if ($banner) {
                                 </p>
                             </div>
                         <?php } ?>
+
+
                         </div>
                     </div>
                 </div>

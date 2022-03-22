@@ -1,0 +1,16 @@
+/* Banner */
+#locksmith-banner-services i {
+    position: relative;
+    top: 0.15rem;
+    z-index: 999;
+    color: #E6FBFF;
+}
+.google-business-reviews-rating .heading,
+.google-business-reviews-rating .vicinity
+{
+    display: none;
+}
+.google-business-reviews-rating > .heading + .vicinity + .rating {
+    display: flex;
+    justify-content: center;
+}

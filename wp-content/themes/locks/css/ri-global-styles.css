@@ -18,6 +18,10 @@
     box-shadow: none;
 }
 /*region Global */
+.section {
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+}
 header.site-header.is-scrolling {
     z-index: 1049;
 }
@@ -40,6 +44,9 @@ ul.flush {
 .bg-light-yellow {
     background-color: rgba(255,255,237, .3);
 }
+.bg-none, .bg-transparent {
+    background: transparent !important;
+}
 .bg-blue {
     background-color: #E6FBFF;
 }
@@ -55,8 +62,11 @@ ul.flush {
 .bg-light-blue {
     background-color: #E6FBFF;
 }
+.bg-light-blue-opacity {
+    background: rgba(230,251,255,.5) !important;
+}
 .text-red {
-    color: #7a193a;
+    color: #7a193a !important;
 }
 .inline-block {
     display: inline-block;
@@ -191,6 +201,14 @@ body .gform_wrapper label.gfield_label {
 /*region Media Queries */
 
 @media (max-width: 768px) {
+    .container {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .container > .wrapper {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
     .modal-header button.close {
         position: absolute;
         right: 0;

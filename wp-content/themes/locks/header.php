@@ -206,7 +206,14 @@
                     </a>
                 </div>
                 <div id="brand-phone" class="test-class">
-                    <h3 class="mb-2">Call for Pricing</h3>
+                    <?php
+                    if (is_page([3929])) {
+                        $header_cta = "Call to Schedule";
+                    } else {
+                        $header_cta = "Call for Pricing";
+                    }
+                    ?>
+                    <h3 class="mb-2"><?php  echo $header_cta; ?></h3>
                     <p><a href="tel:713-465-0055">713-465-0055</a></p>
                 </div>
                 <div id="menu-responsive">
