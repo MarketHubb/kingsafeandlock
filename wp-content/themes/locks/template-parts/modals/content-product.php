@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
-                <p class="mb-0"><strong>Bonded and Insured For Your Protection! License #B12370</strong></p>
+                <p class="mb-0"><strong>Bonded and Insured For Your Protection! License #B19936201</strong></p>
                 <p><small>Copyright © 2021 | King Safe & Lock | All Rights Reserved. | <a href="<?php echo get_home_url() . '/privacy-policy/'; ?>">Privacy
                             Policy</a> | <a href="<?php echo get_home_url() . '/terms-and-conditions/'; ?>">Terms & Conditions</a></small></p>
             </div>
