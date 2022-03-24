@@ -71,7 +71,8 @@ button.btn.bg-light-blue {
     box-shadow: none !important;
 }
 .banner-container button.btn.bg-light-blue:visited,
-.banner-container button.btn.bg-light-blue:active
+.banner-container button.btn.bg-light-blue:active,
+.banner-container button.btn.bg-light-blue:focus
 {
     background-color: #AAF2FF !important;
 }

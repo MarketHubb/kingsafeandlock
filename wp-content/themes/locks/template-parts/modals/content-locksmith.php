@@ -40,7 +40,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <h3 class="lead text-body text-capitalize d-inline-block mb-1 mt-3 fw-bold text-center  border-bottom border-dark pb-1">Schedule a Locksmith Now</h3>
+                            <h3 class="lead text-body text-capitalize d-inline-block my-3 fw-bold text-center  border-bottom border-dark pb-1">Schedule a Locksmith Now</h3>
                         </div>
                     </div>
                     <div class="row">

@@ -19,7 +19,7 @@ if ($banner) {
                     <p class="lead d-none d-md-block text-white hero-alert my-0 py-2">
                         Appointments still available today - Call Now!
                         <span class="hero-phone-alert-container">
-                                <a class="hero-phone hero-phone-alert fw-bold text-white ms-2 text-decoration-underline" href="tel:713-522-5555">                                     713-522-5555
+                                <a class="hero-phone hero-phone-alert fw-bold text-white ms-2 text-decoration-underline" href="tel:713-465-0055">                                    713-465-0055
                                 </a>
                             </span>
                     </p>
