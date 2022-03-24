@@ -2,7 +2,7 @@
 <div class="container">
 
     <!-- Overview / Callout -->
-    <div class="row content-section justify-content-center">
+    <div class="row content-section justify-content-center" id="locksmith-services">
         <div class="col-md-10 text-center">
             <h2 class="fw-bold text-center">Locksmith services you can count on</h2>
             <p class="lead text-center">No matter your security needs, the professionals from King Safe & Lock can help. As soon as you notice a problem — lost keys, stuck locks, or even broken keys — you can trust us to respond quickly and fix the problem just as fast.</p>

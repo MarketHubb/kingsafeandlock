@@ -11,7 +11,7 @@ if ($banner) {
 ?>
 <!-- Appointment Alert Locksmith -->
 <?php if (is_page(3929)) {  ?>
-<div class="bg-red">
+<div class="bg-red" id="locksmith-alert">
     <div class="container-fluid">
         <div class="wrapper">
             <div class="row">
