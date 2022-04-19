@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/helpers.php';
 require_once 'includes/content.php';
 require_once 'includes/ajax.php';
 require_once 'includes/safes.php';
@@ -152,7 +153,7 @@ function ri_conditional_script_loading()
         wp_enqueue_style('locksmith-styles', get_stylesheet_directory_uri() . '/css/ri-locksmith-styles.css');
     }
 
-    if (is_shop() || is_archive() || is_singular('product') || is_page(3048)) {
+    if (is_shop() || is_archive() || is_singular('product') || is_page(3048) || is_page(4004)) {
         wp_enqueue_script('safe-scripts', get_stylesheet_directory_uri() . '/js/ri-safe-scripts.js', ['jquery'], '5.1.0', true);
         wp_enqueue_style('safe-styles', get_stylesheet_directory_uri() . '/css/ri-form-styles.css');
         wp_enqueue_style('product-page-styles');
@@ -193,6 +194,15 @@ if( function_exists('acf_add_options_page') ) {
 //-----------------------------------------------------
 // RI - Global Helper Functions
 //-----------------------------------------------------
+// Disable full-screen editor
+if (is_admin()) {
+    function pa_disable_fullscreen_wp_editor() {
+        $script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
+        wp_add_inline_script( 'wp-blocks', $script );
+    }
+    add_action( 'enqueue_block_editor_assets', 'pa_disable_fullscreen_wp_editor' );
+}
+
 function get_clean_product_name($post_id) {
     if (get_post_type($post_id) == 'product') {
         return strtok(get_the_title($post_id), ' ');

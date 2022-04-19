@@ -1,13 +1,14 @@
+<?php $form_id = get_query_var('form_id') ?: 2; ?>
 <!-- Modal -->
 <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header bg-red">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-md-9">
-                            <h2 class="modal-title fw-bold text-red mb-0 pb-0" id="exampleModalLabel">King Safe & Lock</h2>
-                            <p class="mb-0 small"><em>Proudly serving Houston & surrounding communities</em></p>
+                            <h2 class="modal-title fw-bold mb-0 pb-0 text-white" id="productModalLabel">King Safe & Lock</h2>
+                            <p class="mb-0 small text-white"><em>Proudly serving Houston & surrounding communities</em></p>
                         </div>
                     </div>
                 </div>
@@ -21,15 +22,15 @@
                         <div class="col-md-12">
                             <ul class="list-group list-group-horizontal flush">
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Pricing
+                                    <h5 class="fw-bold"><i class="far fa-check text-red me-0 d-block "></i>Pricing
                                     </h5>
                                 </li>
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Delivery
+                                    <h5 class="fw-bold"><i class="far fa-check text-red me-0 d-block "></i>Delivery
                                     </h5>
                                 </li>
                                 <li class="list-group-item flex-fill no-borders text-center pb-1">
-                                    <h5 class="font-weight-bold"><i class="far fa-check text-success me-0 me-lg-3 d-block d-lg-inline"></i>Support
+                                    <h5 class="fw-bold"><i class="far fa-check text-red me-0 d-block"></i>Support
                                     </h5>
                                 </li>
                             </ul>
@@ -37,12 +38,12 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="lead my-3 font-weight-bold modal-subtitle"></p>
+<!--                            <p class="lead my-3 font-weight-bold modal-subtitle"></p>-->
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-4 mt-lg-5">
                         <div class="col-md-7">
-                            <?php gravity_form( 2, $display_title = false, $display_description = false, $ajax = false, $tabindex="10", $echo = true ); ?>
+                            <?php gravity_form( $form_id, $display_title = false, $display_description = false, $ajax = false, $tabindex="10", $echo = true ); ?>
                         </div>
                         <div class="col-md-5">
                             <img src="" class="modal-image" alt="" />

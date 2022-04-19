@@ -113,6 +113,15 @@ body .gform_wrapper .top_label div.ginput_container {
     color: #f62f2f;
     opacity: .7;
 }
+.modal-header button.close {
+    font-size: 2rem;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+}
+.modal-header.bg-red button.close {
+    color: #fff;
+}
 /*endregion*/
 @media only screen and (min-width: 641px) {
     .gform_wrapper ul.gform_fields li.gfield {
@@ -138,6 +147,19 @@ body .gform_wrapper .top_label div.ginput_container {
     }
 }
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
+    #productModal .product-field .ginput_container > textarea {
+        height: 2rem !important;
+    }
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #productModal .product-field .ginput_container > textarea {
+        width: 200% !important;
+        height: 1rem !important;
+        padding-left: 0 !important;
+    }
+}

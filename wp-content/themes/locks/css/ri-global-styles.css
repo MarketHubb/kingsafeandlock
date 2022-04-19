@@ -197,9 +197,17 @@ body .gform_wrapper label.gfield_label {
     margin-bottom: 0;
 }
 /*endregion*/
-
+#used-safes p > strong {
+    display: block;
+    margin-bottom: -1.5rem;
+}
 /*region Media Queries */
-
+@media (max-width: 1440px) {
+    .container-fluid > .wrapper {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
 @media (max-width: 768px) {
     .container {
         padding-right: 1rem;
