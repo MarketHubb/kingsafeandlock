@@ -11,16 +11,18 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.4.0
+ * @package WooCommerce\Templates
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
+global $product;
+
 /**
  * Hook: woocommerce_before_single_product.
  *
- * @hooked wc_print_notices - 10
+ * @hooked woocommerce_output_all_notices - 10
  */
 do_action( 'woocommerce_before_single_product' );
 
@@ -29,7 +31,7 @@ if ( post_password_required() ) {
     return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
     <?php
     /**
@@ -57,10 +59,12 @@ if ( post_password_required() ) {
          */
         do_action( 'woocommerce_single_product_summary' );
         ?>
+
         <!-- Button trigger modal -->
         <div class=" mt-3 mb-4">
             <?php echo get_product_inquiry_btn($post->ID, 'Product Inquiry <i class="fas fa-long-arrow-right ml-1"></i>'); ?>
         </div>
+
     </div>
 
     <?php
@@ -74,5 +78,3 @@ if ( post_password_required() ) {
     do_action( 'woocommerce_after_single_product_summary' );
     ?>
 </div>
-
-<?php do_action( 'woocommerce_after_single_product' ); ?>
