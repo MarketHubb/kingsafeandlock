@@ -9,7 +9,9 @@
         let safeName = button.data('safename')
         let safeImage = button.data('safeimage')
 
-        var formId = (typeof button.data('safeformid') !== 'undefined') ? button.data('safeformid') : 1;
+        var formId = (typeof button.data('safeformid') !== 'undefined') ? button.data('safeformid') : 2;
+
+        console.log(button.data('safeformid'));
 
         let productField = $('#gform_' + formId).find('.product-field textarea');
 
