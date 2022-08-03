@@ -1,0 +1,20 @@
+/* Shortcode - Reviews */
+#google-business-reviews-rating .heading,
+#google-business-reviews-rating .vicinity,
+#google-business-reviews-rating .heading + p + p,
+#google-business-reviews-rating .attribution
+{
+    display: none;
+}
+/* Our Services */
+.services-container figure + h3 {
+    margin-top: 2rem;
+}
+/* Media Queries */
+@media (min-width: 768px) {
+    .section-heading {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

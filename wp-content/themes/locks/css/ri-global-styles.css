@@ -1,3 +1,6 @@
+.modal-logo {
+    max-height: 50px;
+}
 .product-cta-btn, .gform_button {
     border: none;
     letter-spacing: .03rem;
@@ -110,6 +113,10 @@ body {
 /*endregion*/
 
 /*region Text*/
+h1,h2,h3,h4 {
+    line-height: initial;
+    text-transform: none;
+}
 .heading {
     line-height: 140%;
     color: #333;
