@@ -8,7 +8,7 @@
     }
     ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid my-5">
         <div class="wrapper">
             <div class="row justify-content-center">
                 <div class="col-md-9">

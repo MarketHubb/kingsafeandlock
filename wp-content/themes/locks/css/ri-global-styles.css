@@ -175,9 +175,9 @@ blockquote > p {
     border-radius: 4px;
 }
 .category-pill {
-    background-color: rgba(255,255,255,.5);
+    background-color: #7A193A;
     border-radius: 1000px;
-    padding: .15rem 1rem;
+    padding: .1rem 1rem;
 }
 .shadow {
     box-shadow: 0 10px 20px 0px rgba(51,71,91,0.1) !important;

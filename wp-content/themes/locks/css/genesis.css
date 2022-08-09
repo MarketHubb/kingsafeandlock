@@ -1,3 +1,4 @@
+
 /* Shortcode - Reviews */
 #google-business-reviews-rating .heading,
 #google-business-reviews-rating .vicinity,
@@ -10,7 +11,45 @@
 .services-container figure + h3 {
     margin-top: 2rem;
 }
-/* Media Queries */
+/* Media Queries (Max) */
+@media (max-width: 768px) {
+    .gb-layout-column-wrap {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    .hero-container .gb-layout-column-wrap {
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+    h2 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem;
+    }
+    h2,h3 {
+        line-height: 1;
+    }
+    p {
+        font-size: 1.1rem;
+    }
+    .hero-container {
+        padding: 6% 7% !important;
+    }
+    .cta-container {
+        padding-left: 7% !important;
+        padding-right: 7% !important;
+    }
+    .services-container .wp-block-genesis-blocks-gb-columns .gb-block-layout-column-inner
+    {
+        padding: 1.5rem 0;
+    }
+    .services-container .wp-block-genesis-blocks-gb-columns .gb-block-layout-column-inner  figure {
+        margin-bottom: 0;
+    }
+    .services-container .wp-block-genesis-blocks-gb-columns .gb-block-layout-column-inner  h3 {
+        margin-top: 1rem;
+    }
+}
+/* Media Queries (Min) */
 @media (min-width: 768px) {
     .section-heading {
         max-width: 80%;
