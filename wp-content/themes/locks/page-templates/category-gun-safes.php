@@ -26,7 +26,8 @@ foreach ($gun_safe_terms as $term_id) {
     $content .= '<div class="safe-category-container">';
     $content .= '<div class="container">';
     // Category Name
-    $content .= '<div class="row category-name-container">';
+    $content .= '<div class="row category-name-container" ';
+    $content .= 'id="' . strtolower(str_replace(" ", "_", $cat_attr)) . '">';
     $content .= '<div class="col">';
     $content .= '<h2 data-termid="' . $term_id . '">' . $cat_name . '</h2>';
     $content .= '<h3>' . $cat_attr . '</h3>';
