@@ -95,7 +95,7 @@ if (is_shop() || is_archive() || is_singular('product') || is_page(3048) || is_p
 if (is_page(3080)) {
     get_template_part('template-parts/global/content', 'modal');
 }
-if (is_page(3929) || is_page(4030)) {
+if (is_page(3929) || is_page(4030) || is_page(4184)) {
     get_template_part('template-parts/modals/content', 'locksmith');
 }
 ?>

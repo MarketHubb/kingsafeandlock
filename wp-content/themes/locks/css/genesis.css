@@ -7,6 +7,14 @@
 {
     display: none;
 }
+.star-container .fas, .star-container i {
+    color: orange;
+}
+.testimonial-container .gb-block-layout-column-inner {
+    border: 1px solid #7A193A;
+    padding: 2rem 1.25rem 1rem;
+    border-radius: 4px;
+}
 /* Our Services */
 .services-container figure + h3 {
     margin-top: 2rem;
