@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php
 $tax_term = 'product_cat';
-$gun_safe_terms = [59,60, 36,38,61, 35];
+$gun_safe_terms = [59,60, 36,38,61];
 $content = '';
 foreach ($gun_safe_terms as $term_id) {
     $term =  get_terms([
