@@ -15,6 +15,11 @@
     padding: 2rem 1.25rem 1rem;
     border-radius: 4px;
 }
+/* Hero Container */
+.hero-container h1 + p {
+    font-size: 1.5rem !important;
+    margin-bottom: 4rem !important;
+}
 /* Our Services */
 .services-container figure + h3 {
     margin-top: 2rem;

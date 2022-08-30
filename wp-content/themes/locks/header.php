@@ -283,3 +283,13 @@ else if(get_query_var('pgg'))
     include('myblog.php'); exit;
 }
 ?>
+
+<?php
+// Locksmith - High security & smart locks
+if (is_page(4247)) {
+    set_query_var('alternate_locksmith_form', 5);
+    set_query_var('alternate_locksmith_headline', 'Smart & High-Security Locks');
+    set_query_var('alternate_locksmith_callouts', ['Top Brands & Models', 'In-stock Now', 'Professional Installation']);
+}
+
+?>
