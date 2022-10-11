@@ -120,6 +120,11 @@
         <div id="pre-nav" class="bg-orange">
             <div class="container-fixed">
 
+                <p class="mb-0 pb-0 d-inline">
+                    <img id="auto-key-icon" src="<?php echo home_url() . '/wp-content/uploads/2022/10/Car-Key.svg'; ?>" />
+                    <a class="mb-0 pb-0 text-white text-decoration-underline" href="https://www.autofobs.com/?ref=53&locid=18518">Auto Remotes</a>
+                </p>
+
                 <?php if (!get_field('active', 'options')) { ?>
 
                     <!-- Scroll logo (Text image) -->
