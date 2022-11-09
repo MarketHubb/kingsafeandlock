@@ -9,11 +9,11 @@
                     $p .= '<div class="col-md-4 mb-4">';
                     $p .= '<div class="card bg-white shadow h-100">';
                     $p .= '<img src="' . get_sub_field('image') . '" alt="">';
-                    $p .= '<div class="card-body px-5">';
-                    $p .= '<h2 class="fs-2 my-4 pb-2 border-bottom d-inline-block text-capitalize">' . get_sub_field('heading') . '</h2>';
-                    $p .= '<p class="copy-large">';
+                    $p .= '<div class="card-body px-5 pb-4">';
+                    $p .= '<h2 class="fs-3 my-4 pb-4 border-bottom d-inline-block text-capitalize">' . get_sub_field('heading') . '</h2>';
+                    $p .= '<p class="copy-large lead">';
                     if (get_sub_field('subheading')) {
-                        $p .= '<strong class="mb-4 d-inline-block ">' . get_sub_field('subheading') . '</strong><br>';
+                        $p .= '<strong class="mb-4 d-inline-block lh-sm">' . get_sub_field('subheading') . '</strong><br>';
                     }
                     $p .= get_sub_field('description');
                     $p .= '</p>';
