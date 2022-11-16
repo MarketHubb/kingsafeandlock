@@ -134,22 +134,44 @@ add_action( 'wp_enqueue_scripts', 'locks_scripts' );
 /**
  * Register custom styles and scripts
  */
-wp_register_style( 'ri-global-styles', get_stylesheet_directory_uri() . '/css/ri-global-styles.css' );
-wp_register_style( 'ri-banner-styles', get_stylesheet_directory_uri() . '/css/ri-banner-styles.css' );
-//wp_register_script('bootstrap-scripts', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '', true);
-wp_register_script('bootstrap-scripts', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery', 'popper'), '', true);
-wp_register_script('popper', get_stylesheet_directory_uri() . '/js/popper.min.js', array('jquery'), '', true);
-wp_register_script('ri-global-scripts', get_stylesheet_directory_uri() . '/js/ri-global-scripts.js', array('jquery'), '', true);
-//wp_register_style( 'bootstrap-styles', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
-wp_register_style( 'font-awesome-pro', get_stylesheet_directory_uri() . '/fontawesome-pro/css/all.css' );
-wp_register_style( 'product-page-styles', get_stylesheet_directory_uri() . '/css/product-page-styles.css' );
-wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
+//wp_register_style( 'ri-global-styles', get_stylesheet_directory_uri() . '/css/ri-global-styles.css' );
+//wp_register_style( 'ri-banner-styles', get_stylesheet_directory_uri() . '/css/ri-banner-styles.css' );
+//wp_register_script('ri-global-scripts', get_stylesheet_directory_uri() . '/js/ri-global-scripts.js', array('jquery'), '', true);
+//wp_register_style( 'font-awesome-pro', get_stylesheet_directory_uri() . '/fontawesome-pro/css/all.css' );
+//wp_register_style( 'product-page-styles', get_stylesheet_directory_uri() . '/css/product-page-styles.css' );
+//wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
 
 /**
  * Conditionally enqueue custom styles and scripts
  */
-function ri_conditional_script_loading()
-{
+function ri_conditional_script_loading() {
+    wp_register_script('bootstrap-522-scripts', get_stylesheet_directory_uri() . '/js/bootstrap-522/js/bootstrap.min.js', array(), '', true);
+//    wp_register_script('popper-522', get_stylesheet_directory_uri() . '/js/bootstrap-522/js/popper.js', array(), '', true);
+    wp_register_style( 'ri-global-styles', get_stylesheet_directory_uri() . '/css/ri-global-styles.css' );
+    wp_register_style( 'ri-banner-styles', get_stylesheet_directory_uri() . '/css/ri-banner-styles.css' );
+    wp_register_script('ri-global-scripts', get_stylesheet_directory_uri() . '/js/ri-global-scripts.js', array('jquery'), '', true);
+    wp_register_style( 'font-awesome-pro', get_stylesheet_directory_uri() . '/fontawesome-pro/css/all.css' );
+    wp_register_style( 'product-page-styles', get_stylesheet_directory_uri() . '/css/product-page-styles.css' );
+    wp_register_style( 'modal', get_stylesheet_directory_uri() . '/css/modal.css' );
+
+    if (!is_admin()) {
+        wp_enqueue_script('popper-522');
+        wp_enqueue_script('bootstrap-522-scripts');
+        wp_enqueue_style('bootstrap-5-styles', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.min.css', [], '5.1.3');
+        wp_enqueue_style('bootstrap-overrides', get_stylesheet_directory_uri() . '/css/bootstrap-overrides.css', ['bootstrap-5-styles'] );
+        wp_enqueue_style('ri-global-styles');
+        wp_enqueue_style('ri-banner-styles');
+        wp_enqueue_style('font-awesome-pro');
+        wp_enqueue_style('modal');
+        wp_enqueue_script('ri-global-scripts');
+    }
+
+    // Category gun safes
+    if (is_page(3048)) {
+        wp_enqueue_script('mixitup', get_stylesheet_directory_uri() . '/js/mixitup.min.js', array('jquery'), '', true);
+        wp_enqueue_script('mixitup-controls', get_stylesheet_directory_uri() . '/js/mixitup-controls.js', array('jquery'), '', true);
+    }
+
     // Locksmith
     if (is_page(3929)) {
         wp_enqueue_style('locksmith-styles', get_stylesheet_directory_uri() . '/css/ri-locksmith-styles.css');
@@ -161,16 +183,6 @@ function ri_conditional_script_loading()
         wp_enqueue_style('product-page-styles');
     }
 
-    if (!is_admin()) {
-        wp_enqueue_style('bootstrap-5-styles', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.min.css', [], '5.1.3');
-        wp_enqueue_style('bootstrap-overrides', get_stylesheet_directory_uri() . '/css/bootstrap-overrides.css', ['bootstrap-5-styles'] );
-        wp_enqueue_script('bootstrap-5-scripts', get_stylesheet_directory_uri() . '/bootstrap/js/bootstrap.min.js', [], '5.1.3', true);
-        wp_enqueue_style('ri-global-styles');
-        wp_enqueue_style('ri-banner-styles');
-        wp_enqueue_style('font-awesome-pro');
-        wp_enqueue_style('modal');
-        wp_enqueue_script('ri-global-scripts');
-    }
     if (is_page_template('page-templates/full-width.php')) {
         wp_enqueue_style( 'genesis-styles', get_template_directory_uri() . '/css/genesis.css' );
 

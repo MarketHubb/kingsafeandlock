@@ -4,6 +4,11 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/content', 'banner'); ?>
 
+<!-- Brought over -->
+<?php
+$attributes = ['msrp', 'capacity-total', 'weight', 'fire-rating', 'exterior-depth', 'exterior-width', 'exterior-height'];
+?>
+
 <?php
 $tax_term = 'product_cat';
 $gun_safe_terms = [59,60, 36,38,61];
@@ -22,38 +27,20 @@ foreach ($gun_safe_terms as $term_id) {
         $cat_attr = get_field('category_safes_fire_rating', $acf_field_param);
     }
 
+    // Parent
     $content .= '<div class="bg-white">';
-    $content .= '<div class="safe-category-container">';
-    $content .= '<div class="container">';
-    // Category Name
-    $content .= '<div class="row category-name-container" ';
-    $content .= 'id="' . strtolower(str_replace(" ", "_", $cat_attr)) . '">';
-    $content .= '<div class="col">';
-    $content .= '<h2 data-termid="' . $term_id . '">' . $cat_name . '</h2>';
-    $content .= '<h3>' . $cat_attr . '</h3>';
-    $content .= '<p>' . get_field('category_safes_description', $acf_field_param) . '</p>';
-    $content .= '</div></div>';
-    // Category Attributes
-    if( have_rows('category_safes_attributes', $acf_field_param) ):
-        $content .= '<div class="row category-attributes-container">';
-        while ( have_rows('category_safes_attributes', $acf_field_param) ) : the_row();
-            $content .= '<div class="col-md-4">';
-            $attribute_heading = get_icon_for_category_attribute(get_sub_field('category_safes_attributes_category', $acf_field_param));
-            $content .= $attribute_heading;
-            if( have_rows('category_safes_attributes_items', $acf_field_param) ):
-                $content .= '<ul class="left-aligned">';
-                while ( have_rows('category_safes_attributes_items', $acf_field_param) ) : the_row();
-                    $content .= '<li>' . get_sub_field('category_safes_attributes_items_item', $acf_field_param) . '</li>';
-                endwhile;
-                $content .= '</ul>';
-            endif;
-            $content .= '</div>';
-        endwhile;
-        $content .= '</div></div></div>';
-    endif;
 
-    // Product List
-    $content .= '<div class="container">';
+    // Category Callouts
+    $callout_args = array(
+        'cat_attr' => $cat_attr,
+        'term_id' => $term_id,
+        'cat_name' => $cat_name,
+        'acf_field_param' => $acf_field_param
+    );
+
+    get_template_part('template-parts/safes/content', 'category-callouts', $callout_args);
+
+    // Query args
     $query_args = [
         'post_type' => 'product',
         'posts_per_page' => -1,
@@ -64,54 +51,27 @@ foreach ($gun_safe_terms as $term_id) {
             ),
         ),
     ];
+
     $query = new WP_Query($query_args);
 
-    if ($query->have_posts()) :
-        $content .= '<div class="row product-grids-container">';
-        $i = 0;
-        while ($query->have_posts()) : $query->the_post();
-            if ($i > 0 && $i % 3 === 0) {
-                $content .= '</div>';
-                $content .= '<div class="row product-grids-container">';
-            }
-            $content .= '<div class="col-md-4 text-center mb-3">';
-            $content .= '<div class="product-container">';
+    if ($query->have_posts()) : ?>
 
-            $product_manufacturer  = get_field('category_safes_manufacturer', $acf_field_param) . ' ';
-            $product_num = get_clean_product_name($post->ID);
-            $fire_rating = get_field('category_safes_fire_rating', $acf_field_param) . ' Minute Fire Rating ';
-            $gun_capacity = get_field('post_product_gun_gun_capacity') . ' Gun Capacity';
+        <div class="container">
 
-            $content .= '<h4 class="product-list-name text-dark font-weight-bold">' . $product_manufacturer . ' ' . $product_num . '</h4>';
-            $content .= '<p class="product-list-fire-rating">' . $gun_capacity . '</p>';
-            $content .= '<img src="' . get_the_post_thumbnail_url() . '"/>';
-            $content .= '<div class="text-center inquiry-container mt-3">';
+            <div class="row product-grids-container">
 
-//            $attr = get_safe_attributes($post->ID);
-//            $content .= '<button type="button" class="product-cta-btn" ';
-//            $content .= 'data-toggle="modal" ';
-//            $content .= 'data-target="#productModal" ';
-//            $content .= 'data-safeimage="' . get_the_post_thumbnail_url() . '" ';
-//            $content .= 'data-safetype="' . $attr['safe_type'] . '" ';
-//            $content .= 'data-safename="' . $key . ' ' . get_the_title() . '">';
-//            $content .= 'Product Inquiry</button>';
+            <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            $content .= get_product_inquiry_btn($post->ID, 'Product Inquiry <i class="fas fa-long-arrow-right ml-1"></i>');
-            $content .= '</div>';
+                <?php get_template_part('template-parts/safes/content', 'grid-list', ['attributes' => $attributes]); ?>
 
-            $content .= '<a href="' . get_permalink() . '" class="stretched-link"></a>';
-            $content .= '</div></div>';
+            <?php endwhile; wp_reset_postdata(); ?>
 
-            $i++;
-        endwhile;
-        $content .= '</div>';
-        wp_reset_postdata();
-    endif;
-    $content .= '</div>';
+            </div>
 
-}
-echo $content;
-?>
+    </div>
 
+    <?php endif; ?>
+
+<?php } ?>
 
 <?php get_footer(); ?>
