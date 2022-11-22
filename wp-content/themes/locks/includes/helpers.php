@@ -109,4 +109,26 @@ function get_formatted_attributes($label) {
 
     return $attribute;
 }
+function return_manufacturer_attributes_logo($post_id) {
+    $oem = trim(strtolower(get_field('post_product_gun_manufacturer', $post_id)));
+
+    if( have_rows('logos', 'option') ):
+        while ( have_rows('logos', 'option') ) : the_row();
+            $oem = trim(strtolower(get_field('post_product_gun_manufacturer', $post_id)));
+            $oem_field_name = trim(strtolower(get_sub_field('name', 'option')));
+            if ($oem_field_name === $oem) {
+                $logo =  get_sub_field('grey', 'option');
+            }
+        endwhile;
+    endif;
+
+    return $logo;
+}
+function get_safe_type_attributes($post_id) {
+    $safe_type['attribute_label'] = "Safe Type";
+    $safe_type['attribute_value'] = "Gun & Rifle";
+    $safe_type['attribute_image'] = '/wp-content/uploads/2022/11/type-gun-4.svg';
+
+    return $safe_type;
+}
 ?>

@@ -5,7 +5,9 @@
 <div class="modal fade" id="locksmithModal" tabindex="-1" aria-labelledby="locksmithModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
+
             <?php get_template_part('template-parts/modal/content', 'header', ['heading' => $form_headline]); ?>
+
             <div class="modal-body">
                 <div class="container-fluid">
                     <!-- Callouts -->

@@ -32,6 +32,24 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+    
+    <?php
+    $gun_safe = false;
+    $terms = get_the_terms(get_the_ID(),'product_cat');
+
+    foreach ($terms as $term) {
+        if ($term->parent == 25) {
+            $gun_safe = true;
+            break;
+        }
+    }
+    ?>
+
+    <?php if ($gun_safe) { ?>
+
+        <?php get_template_part('template-parts/safes/content', 'gun-single'); ?>
+
+    <?php } else { ?>
 
     <?php
     /**
@@ -78,3 +96,7 @@ if ( post_password_required() ) {
     do_action( 'woocommerce_after_single_product_summary' );
     ?>
 </div>
+
+<?php } ?>
+
+<?php do_action( 'woocommerce_after_single_product' ); ?>

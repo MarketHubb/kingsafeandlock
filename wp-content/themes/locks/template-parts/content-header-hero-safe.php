@@ -30,6 +30,7 @@ if (is_shop() || is_archive() || is_singular('product')) {
 
 
 <!-- Bannerless H1 ouput -->
+<?php if (!is_shop() && !is_singular()) { ?>
 <div class="bannerless-heading-container">
     <div class="container-fixed">
         <?php  
@@ -48,3 +49,4 @@ if (is_shop() || is_archive() || is_singular('product')) {
         
     </div>
 </div>
+<?php } ?>

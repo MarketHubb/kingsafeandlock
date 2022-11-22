@@ -65,8 +65,25 @@ ul.flush {
     font-weight: 600;
     color: #fff !important;
 }
+.attribute-icons {
+    max-height: 35px !important;
+}
 .product-list-item .btn.bg-red:hover {
     background-color: darkred !important;
+}
+.product-single-container .product-detail-heading {
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 1rem;
+}
+.woocommerce-breadcrumb {
+    text-align: right;
+}
+.woocommerce .woocommerce-breadcrumb {
+    margin-bottom: 1rem;
+}
+.image-container > div {
+    width: 100% !important;
 }
 .bg-light-yellow {
     background-color: rgba(255,255,237, .3);
@@ -282,6 +299,12 @@ body .gform_wrapper label.gfield_label {
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+    .product-single-container .product-detail-heading {
+        font-size: 3rem;
+    }
+    .product-single-container .product-detail-heading + p {
+        font-size: 1.5rem;
+    }
     .custom-content h1 {
         font-size: 2.5rem;
     }
