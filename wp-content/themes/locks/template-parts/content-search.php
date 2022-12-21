@@ -7,6 +7,7 @@
  * @package locks
  */
 ?>
+<h1>Test</h1>
 <li>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

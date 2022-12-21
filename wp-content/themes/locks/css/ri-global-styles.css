@@ -1,3 +1,9 @@
+header #pre-nav .logo-fixed > a > h4 {
+    visibility: hidden;
+}
+header.is-scrolling #pre-nav .logo-fixed > a > h4 {
+    visibility: inherit;
+}
 .modal-logo {
     max-height: 50px;
 }

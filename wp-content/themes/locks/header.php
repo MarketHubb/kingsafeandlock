@@ -117,93 +117,25 @@
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'locks' ); ?></a>
     <header id="masthead" class="site-header" role="banner">
 
-        <div id="pre-nav" class="bg-orange">
-            <div class="container-fixed">
+        <!-- Pre-nav -->
+        <?php get_template_part('template-parts/global/content', 'pre-nav'); ?>
 
-                <?php if (!get_field('active', 'options')) { ?>
+        <!-- CURRENT:: Fixed header (when scrolling) -->
+        <div class="scrolling-brand-phone">
+            <div class="brand-phone">
 
-                    <!-- Auto fobs-->
-                    <p class="mb-0 pb-0 d-inline">
-                        <img id="auto-key-icon" src="<?php echo home_url() . '/wp-content/uploads/2022/10/Car-Key.svg'; ?>" />
-                        <a class="mb-0 pb-0 text-white text-decoration-underline" href="https://www.autofobs.com/?ref=53&locid=18518">Auto Remotes</a>
-                    </p>
+                <!-- LEGACY:: Gun Safes & Gun Single (Phone Lead)  -->
+                <?php //if ( is_page(3857) || is_singular('product') ) { ?>
+                <!-- <h3>Call for Safe Pricing</h3>-->
+                <?php //} else { ?>
+                <!-- <h3>Call Us for Services</h3>-->
+                <?php // } ?>
 
-                    <!-- Scroll logo (Text image) -->
-                    <div id="left-content">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/header/locks-logo-header-collapsed.png" alt="King Safe And Lock">
-                        </a>
-                    </div>
-                    <!-- CURRENT:: Pre Nav (social icons) -->
-                    <div id="right-content">
-                        <div id="social">
-                            <a href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/header/fb-icon.png" alt="Facebook" target="_blank"></a>
-                            <a class="text-white" id="email" href="mailto:sales@kingsafeandlock.com"><i class="fas fa-envelope fa-lg"></i></a>
-                        </div>
-                    </div>
-
-                <?php } else { ?>
-
-                    <p class="px-4 text-center font-weight-bold mb-0 pb-0 ">
-                        <a href="<?php echo get_field('alert_link', 'options'); ?>" class="text-white">
-                            <?php echo get_field('alert_message', 'options'); ?>
-                            <i class="fas fa-long-arrow-right ml-1"></i>
-                        </a>
-                    </p>
-
-
-                <?php } ?>
+                <h3>Call Now</h3>
+                <p><a href="tel:713-465-0055">713-465-0055</a></p>
             </div>
-
-            <!-- CURRENT:: Fixed header (when scrolling) -->
-            <div class="scrolling-brand-phone">
-                <div class="brand-phone">
-
-                    <!-- LEGACY:: Gun Safes & Gun Single (Phone Lead)  -->
-                    <?php //if ( is_page(3857) || is_singular('product') ) { ?>
-                    <!-- <h3>Call for Safe Pricing</h3>-->
-                    <?php //} else { ?>
-                    <!-- <h3>Call Us for Services</h3>-->
-                    <?php // } ?>
-
-                    <h3>Call Now</h3>
-                    <p><a href="tel:713-465-0055">713-465-0055</a></p>
-                </div>
-            </div>
-
         </div>
 
-        <!--        <div id="pre-nav">-->
-<!--            <div class="container-fixed">-->
-<!--                <div id="left-content">-->
-<!--                    <a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--">-->
-<!--                        <img src="--><?php //echo get_template_directory_uri(); ?><!--/images/header/locks-logo-header-collapsed.png" alt="King Safe And Lock">-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <div id="right-content">-->
-<!--                    <div id="social">-->
-<!--                        <a href="--><?php //the_field( 'facebook_url', 'option' ); ?><!--" target="_blank"><img src="--><?php //echo get_template_directory_uri(); ?><!--/images/header/fb-icon.png" alt="Facebook" target="_blank"></a>-->
-<!---->
-<!--                    </div>-->
-<!--                    <div id="links">-->
-<!--                        <a id="blog" href="//kingsafeandlock.com/blog/">Blog</a>-->
-<!--                        <a id="newsletter" rel="nofollow" href="--><?php //the_field( 'sign_up_for_our_newsletter_url', 'option' ); ?><!--" target="_blank">Sign Up for Special Offers</a>-->
-<!--                    </div>-->
-<!--                    <div id="search">-->
-<!--                        --><?php ////get_search_form(); ?>
-<!---->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!---->
-<!--            <div class="scrolling-brand-phone">-->
-<!--                <div class="brand-phone">-->
-<!--                    <h3>Call Us for Services</h3>-->
-<!--                    <p><a href="tel:713-465-0055">713-465-0055</a></p>-->
-<!---->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
         <div id="brand-info">
             <div class="container-fixed">
                 <div id="brand-logo">

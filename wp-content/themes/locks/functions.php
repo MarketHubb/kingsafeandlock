@@ -394,13 +394,7 @@ function custom_posts_where( $where, $query ) {
     return $where;
     
 }
-function wpse_load_custom_search_template(){
-    if( isset($_REQUEST['search']) == 'advanced' ) {
-        require('advanced-search-result.php');
-        die();
-    }
-}
-add_action('init','wpse_load_custom_search_template');
+
 add_filter( 'wpseo_breadcrumb_links', 'check_links' );
 function check_links( $links ) {
 	// $links[0]  => 'Home'
