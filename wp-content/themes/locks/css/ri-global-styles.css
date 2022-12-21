@@ -263,6 +263,23 @@ body .gform_wrapper label.gfield_label {
     }
 }
 @media (max-width: 768px) {
+    #menu-responsive .search-field-row {
+        display: block;
+    }
+    #menu-responsive #searchform .search-field {
+        line-height: 1.25;
+        font-size: 1.1rem;
+        width: 80% !important;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+        border-color: #7a193a;
+        padding-top: 0.35rem;
+        padding-bottom: 0.25rem;
+    }
+    #menu-responsive #searchform i {
+        color: #7a193a !important;
+    }
+
     .container {
         padding-right: 1rem;
         padding-left: 1rem;

@@ -1,6 +1,25 @@
 /* jQuery (Footer) */
 (function($) {
 
+    // Search
+    $('#searchform').on('submit', function(e) {
+        let searchInput = $(this).find('input.search-field');
+        if (searchInput.val().length === 0) {
+            e.preventDefault();
+        }
+    });
+
+    if($(window).width() <= 768){
+
+        // Mobile search
+        const search = $('#searchform');
+        const menu = $('#primary-menu');
+
+        if (search.length >= 1) {
+            search.insertBefore(menu);
+        }
+    }
+
     function getHeroForModal(heading, description, image)
     {
         $.ajax({
