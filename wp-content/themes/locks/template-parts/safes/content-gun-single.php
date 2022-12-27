@@ -19,7 +19,10 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-md-6">
-                <h1 class="product-detail-heading"><?php echo get_the_title(); ?> Gun Safe</h1>
+                <h1 class="product-detail-heading">
+                    <?php $title = get_the_title() . ' ' . get_safe_type(get_the_ID()) . ' Safe'; ?>
+                    <?php echo $title; ?>
+                </h1>
                 <p class="product-detail-subheading"><?php echo get_field('post_product_gun_model_description'); ?></p>
                 <div class="mt-5 image-container">
                     <?php do_action( 'woocommerce_before_single_product_summary' ); ?>

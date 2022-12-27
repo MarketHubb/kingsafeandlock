@@ -1,4 +1,19 @@
 <?php
+function get_safe_type($post_id) {
+    $terms = get_the_terms($post_id, 'product_cat');
+    $term_ids = [];
+
+    foreach ($terms as $term) {
+        $term_ids[] = $term->term_id;
+        $term_ids[] = $term->parent;
+    }
+
+    if (!empty($term_ids)) {
+        if (in_array(25, $term_ids)) {
+            return "Gun";
+        }
+    }
+}
 function get_repeater_field_row($repeater_field, $row_index, $sub_field, $post_id)
 {
     $rows = get_field($repeater_field, $post_id);
@@ -125,9 +140,11 @@ function return_manufacturer_attributes_logo($post_id) {
     return $logo;
 }
 function get_safe_type_attributes($post_id) {
-    $safe_type['attribute_label'] = "Safe Type";
-    $safe_type['attribute_value'] = "Gun & Rifle";
-    $safe_type['attribute_image'] = '/wp-content/uploads/2022/11/type-gun-4.svg';
+    if (get_safe_type($post_id) === "Gun") {
+        $safe_type['attribute_label'] = "Safe Type";
+        $safe_type['attribute_value'] = "Gun & Rifle";
+        $safe_type['attribute_image'] = get_field('gun_safe_logo', 'option');
+    }
 
     return $safe_type;
 }
