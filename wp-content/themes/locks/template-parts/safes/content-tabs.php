@@ -13,9 +13,6 @@
 <div class="tab-content py-4 px-1" id="myTabContent">
 
     <div class="tab-pane fade show active" id="attributes" role="tabpanel" aria-labelledby="home-tab">
-        <div class="inquiry-container py-3">
-            <?php echo get_product_inquiry_btn($post->ID, 'Get Installation Options & Delivery Times'); ?>
-        </div>
         <h4 class="text-dark mt-4 mb-4"><?php echo get_the_title() ?> at a glance: </h4>
         <?php get_template_part('template-parts/safes/content', 'attributes'); ?>
     </div>

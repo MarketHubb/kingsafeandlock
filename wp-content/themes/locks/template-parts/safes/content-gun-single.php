@@ -29,6 +29,10 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
                 </div>
             </div>
             <div class="col-md-5">
+                <div class="inquiry-container py-3 mb-4">
+                    <?php echo get_product_inquiry_btn($post->ID, 'Get Installation Options & Delivery Times'); ?>
+                </div>
+
                 <?php get_template_part('template-parts/safes/content', 'inquiry'); ?>
                 <?php get_template_part('template-parts/safes/content', 'tabs'); ?>
             </div>
