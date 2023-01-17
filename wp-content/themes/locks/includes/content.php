@@ -1,5 +1,29 @@
 <?php
+function get_safe_designation($post_id) {
+    $terms = get_the_terms($post_id, 'product_cat');
+    $product_terms = [];
+    $all_terms = [];
 
+    foreach ($terms as $term) {
+        $product_terms[] = $term->term_id;
+        if (isset($term->parent)) {
+            $product_terms[] = $term->parent;
+        }
+    }
+
+    switch (true) {
+        case in_array(25,$product_terms):
+            return "Gun";
+        case in_array(27,$product_terms):
+            return "Home & Office";
+        case in_array(22,$product_terms):
+            return "Commercial";
+        case in_array(26,$product_terms):
+            return "High Security";
+        case in_array(24,$product_terms):
+            return "Floor & Wall";
+    }
+}
 function compare_published_updated_dates($post_id) {
     $dates = [];
     $published_time = strtotime(get_the_date('', $post_id));

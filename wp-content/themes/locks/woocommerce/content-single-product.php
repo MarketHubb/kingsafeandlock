@@ -45,7 +45,7 @@ if ( post_password_required() ) {
     }
     ?>
 
-    <?php if ($gun_safe) { ?>
+    <?php if (true) { ?>
 
         <?php get_template_part('template-parts/safes/content', 'gun-single'); ?>
 

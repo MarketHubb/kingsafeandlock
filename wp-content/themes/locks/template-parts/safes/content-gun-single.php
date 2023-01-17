@@ -20,9 +20,19 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
         <div class="row justify-content-between">
             <div class="col-md-6">
                 <h1 class="product-detail-heading">
-                    <?php $title = get_the_title() . ' ' . get_safe_type(get_the_ID()) . ' Safe'; ?>
-                    <?php echo $title; ?>
+                    <?php
+                    $title = get_the_title();
+                    $safe_type = get_safe_designation($post->ID);
+
+                    if (str_contains($title, "AMSEC") && isset($safe_type)) {
+                        $title_formatted = $title . ' ' . $safe_type . ' Safe';
+                    } else {
+                        $title_formatted = $title;
+                    }
+
+                     echo $title_formatted; ?>
                 </h1>
+
                 <p class="product-detail-subheading"><?php echo get_field('post_product_gun_model_description'); ?></p>
                 <div class="mt-5 image-container">
                     <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
