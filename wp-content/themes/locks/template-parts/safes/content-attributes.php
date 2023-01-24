@@ -24,11 +24,15 @@ if( have_rows('attributes', 'option') ):
                 $safe_type['attribute_image'] = return_manufacturer_attributes_logo(get_the_ID());
             }
 
-            $attributes .= '<tr class="align-middle">';
-            $attributes .= '<td class=" py-3 my-1"><img src="' . $safe_type['attribute_image'] . '"  class="attribute-icons text-secondary" /></td>';
-            $attributes .= '<td class="pe-0"><p class="fw-bold mb-0 d-inline fs-5 text-end">' . $safe_type['attribute_label'] . ':</p></td>';
-            $attributes .= '<td class="ps-0"><p class="fs-5 fw-600 mb-0 anti ' . strtolower(str_replace(' ', '_', $safe_type['attribute_label'])) . '">' . $safe_type['attribute_value'] . '</p></td>';
-            $attributes .= '</tr>';
+            if ($safe_type['attribute_label'] !== 'MSRP') {
+                $attributes .= '<tr class="align-middle">';
+                $attributes .= '<td class=" py-3 my-1"><img src="' . $safe_type['attribute_image'] . '"  class="attribute-icons text-secondary" /></td>';
+                $attributes .= '<td class="pe-0"><p class="fw-bold mb-0 d-inline fs-5 text-end">' . $safe_type['attribute_label'] . ':</p></td>';
+                $attributes .= '<td class="ps-0"><p class="fs-5 fw-600 mb-0 anti ' . strtolower(str_replace(' ', '_', $safe_type['attribute_label'])) . '">' . $safe_type['attribute_value'] . '</p></td>';
+                $attributes .= '</tr>';
+            }
+
+
         }
         
 

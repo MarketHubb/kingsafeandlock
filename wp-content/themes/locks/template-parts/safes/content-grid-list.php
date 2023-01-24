@@ -46,6 +46,8 @@
                 <?php $val = get_safe_attribute_values($post->ID, $attribute); ?>
                 <?php $attr_clean = strtolower(str_replace(' ', '_', $attribute)); ?>
 
+                <?php if ($attr_clean !== 'msrp') { ?>
+
                 <li class="<?php echo $attr_clean; ?> d-flex justify-content-center fw-600">
                     <span class="text-secondary w-50 text-end pe-2 attribute-label   text-right <?php echo $attribute; ?>">
                        <?php echo get_formatted_attributes($attribute)['name']; ?>:
@@ -54,6 +56,7 @@
                         <?php echo $val['formatted']; ?>
                    </span>
                </li>
+               <?php } ?>
            <?php } ?>
            </ul>
 
