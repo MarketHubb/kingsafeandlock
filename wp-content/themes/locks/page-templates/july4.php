@@ -8,7 +8,7 @@ get_header(); ?>
 
 
         <!-- Panel Content -->
-        <header class="max-height-50 mh-50 shadow-sm" style="background-image: url(<?php echo get_home_url() . '/wp-content/uploads/2023/06/Banner-Popup-1.png'; ?>); background-position: center; background-size: cover">
+        <header class="max-height-50 mh-50 shadow-sm" style="background-image: url(<?php echo get_home_url() . '/wp-content/uploads/2023/06/popup-banner.png'; ?>); background-position: center; background-size: cover">
         </header>
 
         <div class="promotion-cards">
