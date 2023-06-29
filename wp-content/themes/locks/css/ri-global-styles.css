@@ -1,3 +1,9 @@
+.max-height-50 {
+    max-height: 50vh;
+}
+.mh-50 {
+    min-height: 50vh;
+}
 header #pre-nav .logo-fixed > a > h4 {
     visibility: hidden;
 }
@@ -6,6 +12,26 @@ header.is-scrolling #pre-nav .logo-fixed > a > h4 {
 }
 .modal-logo {
     max-height: 50px;
+}
+.promotion-cards .card-img-top {
+    min-height: 350px;
+    max-height: 350px;
+    width: 100%;
+    object-fit: contain;
+}
+#popupModal .close {
+    opacity: 1;
+    position: absolute;
+}
+#popupModal .close {
+    right: -1.5rem;
+    top: -3.5rem;
+}
+#popupModal .close > span {
+    font-size: 3rem;
+}
+#popupModal .modal-body .btn {
+    background-color: #dd7f36 !important;
 }
 #auto-key-icon {
     filter: invert(89%) sepia(100%) saturate(0%) hue-rotate(353deg) brightness(104%) contrast(101%);

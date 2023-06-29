@@ -89,6 +89,9 @@
 </div><!-- #page -->
 
 <?php
+if (is_front_page()) {
+    get_template_part('template-parts/modal/content', 'popup');
+}
 if (is_shop() || is_archive() || is_singular('product') || is_page(3048) || is_page(4004)) {
     get_template_part('template-parts/modals/content', 'product');
 }
