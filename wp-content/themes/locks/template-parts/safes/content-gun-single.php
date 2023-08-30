@@ -17,6 +17,18 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
     </div>
 
     <div class="container">
+
+        <?php if (get_field('detail_alert_active', 'option')) { ?>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="detail-alert-heading fw-bold mb-0 pb-0"><?php the_field('detail_alert_heading', 'option'); ?></p>
+                    <p class="detail-alert-description small"><?php the_field('detail_alert_description', 'option'); ?></p>
+                </div>
+            </div>
+
+        <?php } ?>
+
         <div class="row justify-content-between">
             <div class="col-md-6">
                 <h1 class="product-detail-heading">

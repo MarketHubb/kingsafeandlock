@@ -289,6 +289,12 @@ body .gform_wrapper label.gfield_label {
     }
 }
 @media (max-width: 768px) {
+    .container-fixed {
+        padding: 0px 22px;
+    }
+    .woocommerce-breadcrumb {
+        display: none;
+    }
     #menu-responsive .search-field-row {
         display: block;
     }
