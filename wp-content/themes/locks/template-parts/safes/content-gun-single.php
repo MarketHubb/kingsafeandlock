@@ -20,7 +20,7 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
 
         <?php if (get_field('detail_alert_active', 'option')) { ?>
 
-            <div class="row">
+            <div class="row d-none">
                 <div class="col-md-12">
                     <p class="detail-alert-heading fw-bold mb-0 pb-0"><?php the_field('detail_alert_heading', 'option'); ?></p>
                     <p class="detail-alert-description small"><?php the_field('detail_alert_description', 'option'); ?></p>
@@ -30,35 +30,64 @@ set_query_var('modal_mobile_heading', 'Safe Product Inquiry');
         <?php } ?>
 
         <div class="row justify-content-between">
+
+            <!-- Image -->
             <div class="col-md-6">
-                <h1 class="product-detail-heading">
-                    <?php
-                    $title = get_the_title();
-                    $safe_type = get_safe_designation($post->ID);
-
-                    if (str_contains($title, "AMSEC") && isset($safe_type)) {
-                        $title_formatted = $title . ' ' . $safe_type . ' Safe';
-                    } else {
-                        $title_formatted = $title;
-                    }
-
-                     echo $title_formatted; ?>
-                </h1>
-
-                <p class="product-detail-subheading"><?php echo get_field('post_product_gun_model_description'); ?></p>
                 <div class="mt-5 image-container">
                     <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
                 </div>
             </div>
-            <div class="col-md-5">
+
+            <!-- Info -->
+            <div class="col-md-6">
+                <?php
+                $title = get_the_title();
+                $safe_type = get_safe_designation($post->ID);
+                $manufacturer = get_manufacturer_by_title(get_the_ID());
+                ?>
+
+                <?php if ($safe_type) { ?>
+
+                    <p class="fs-4 mb-1"><?php echo $safe_type; ?> Safe by <?php echo $manufacturer; ?></p>
+
+                <?php } ?>
+
+                <h1 class="product-detail-heading">
+
+                <?php
+                if (str_contains($title, "AMSEC") && isset($safe_type)) { ?>
+
+                    <span class="d-block"><?php echo $title; ?></span>
+
+                <?php  } else { ?>
+
+                    <?php echo $title; ?>
+
+                <?php } ?>
+
+                </h1>
+
+                <p class="product-detail-subheading"><?php echo get_field('post_product_gun_model_description'); ?></p>
+                <?php if (get_field('post_product_gun_long_description')) { ?>
+                    <p><?php the_field('post_product_gun_long_description'); ?></p>
+                <?php } ?>
+
+
+
                 <div class="inquiry-container py-3 mb-4">
-                    <?php echo get_product_inquiry_btn($post->ID, 'Get Installation Options & Delivery Times'); ?>
+                    <?php echo get_product_inquiry_btn($post->ID, 'Get Pricing & Delivery Options'); ?>
                 </div>
 
-                <?php get_template_part('template-parts/safes/content', 'inquiry'); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <?php get_template_part('template-parts/safes/content', 'tabs'); ?>
             </div>
         </div>
+
+
     </div>
 
     <div class="container">

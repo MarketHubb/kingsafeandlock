@@ -1,3 +1,19 @@
+.text-blue {
+    color: #174368;
+}
+.font-oxygen {
+    font-family: "Oxygen";
+}
+.woocommerce table.shop_attributes {
+    border-top: none;
+}
+.woocommerce table.shop_attributes th {
+    width: inherit;
+}
+.tab-content .post-excerpt.bullets ul {
+    margin-left: 0;
+    margin-top: 2rem;
+}
 .max-height-50 {
     max-height: 50vh;
 }

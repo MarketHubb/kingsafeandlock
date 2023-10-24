@@ -1,16 +1,16 @@
 
 <ul class="nav nav-tabs nav-fill lst-none ps-0 ms-0" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-        <button class="nav-link fs-6 fw-600 active" id="attributes-tab" data-bs-toggle="tab" data-bs-target="#attributes" type="button" role="tab" aria-controls="attributes" aria-selected="true">Attributes</button>
+    <li class="nav-item " role="presentation">
+        <button class="nav-link fs-5 pt-4 fw-600 active" id="attributes-tab" data-bs-toggle="tab" data-bs-target="#attributes" type="button" role="tab" aria-controls="attributes" aria-selected="true">Attributes</button>
     </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link fs-6 fw-600" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Overview</button>
+    <li class="nav-item " role="presentation">
+        <button class="nav-link fs-5 pt-4 fw-600" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Overview</button>
     </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link fs-6 fw-600" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">Specs</button>
+    <li class="nav-item " role="presentation">
+        <button class="nav-link fs-5 pt-4 fw-600" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">Specs</button>
     </li>
 </ul>
-<div class="tab-content py-4 px-1" id="myTabContent">
+<div class="tab-content p-0 p-md-4" id="myTabContent">
 
     <div class="tab-pane fade show active" id="attributes" role="tabpanel" aria-labelledby="home-tab">
         <h4 class="text-dark mt-4 mb-4"><?php echo get_the_title() ?> at a glance: </h4>

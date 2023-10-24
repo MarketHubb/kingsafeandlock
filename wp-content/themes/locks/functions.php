@@ -4,6 +4,14 @@ require_once 'includes/content.php';
 require_once 'includes/ajax.php';
 require_once 'includes/safes.php';
 
+function output_loaded_template() {
+    if ( is_super_admin() ) {
+        global $template;
+        highlight_string("<?php\n\$template =\n" . var_export($template, true) . ";\n?>");
+    }
+}
+add_action( 'wp_footer', 'output_loaded_template' );
+
 /**
  * locks functions and definitions.
  *

@@ -1,4 +1,26 @@
 <?php
+function get_manufacturer_by_title($post_id) {
+    $title = get_the_title($post_id);
+    $manufacturer = "American Security";
+    $jewel_terms = ["JST", "JFB"];
+
+    foreach ($jewel_terms as $jewel_term) {
+        if (strpos($title, $jewel_term) !== false) {
+            $manufacturer = "JEWEL";
+        }
+    }
+
+//
+//    $title_array = explode(" ", $title);
+//
+//    foreach ($title_array as $key => $word) {
+//        if (in_array($word, $jewel_terms)) {
+//            $manufacturer = "Jewel";
+//        }
+//    }
+
+    return $manufacturer;
+}
 function get_safe_type($post_id) {
     $terms = get_the_terms($post_id, 'product_cat');
     $term_ids = [];

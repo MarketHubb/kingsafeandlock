@@ -29,8 +29,28 @@ if (is_shop() || is_archive() || is_singular('product')) {
 ?>
 
 
+<!-- Product Cat Page -->
+<?php if (is_product_category()) { ?>
+    <?php $obj = get_queried_object(); ?>
+        <?php highlight_string("<?php\n\$obj =\n" . var_export($obj, true) . ";\n?>"); ?>
+
+    <!-- Hero -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 pe-md-5">
+                <h1 class="fw-bold mb-1 text-blue font-oxygen"><?php echo $obj->name; ?></h1>
+                <p class="lead fw-normal"></p>
+                <p><?php echo $obj->description; ?></p>
+            </div>
+            <div class="col-md-6">
+                <img src="<?php echo home_url() . '/wp-content/uploads/2021/11/KSL-Showroom-1.jpg'; ?>" alt="">
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+<?php if (!is_shop() && !is_singular() && !is_product_category()) { ?>
 <!-- Bannerless H1 ouput -->
-<?php if (!is_shop() && !is_singular()) { ?>
 <div class="bannerless-heading-container">
     <div class="container-fixed">
         <?php  
