@@ -56,8 +56,8 @@ get_header(); ?>
                 'taxonomy' => 'product_cat',
                 'hide_empty' => true,
                 'parent' => $parent_product_cat->term_id,
-                'orderby' => 'meta_value_num',
-                'meta_key' => 'output_order',
+//                'orderby' => 'meta_value_num',
+//                'meta_key' => 'output_order',
             ));
 
             $cats .= '<ul class="list-group list-group-flush ms-0">';
