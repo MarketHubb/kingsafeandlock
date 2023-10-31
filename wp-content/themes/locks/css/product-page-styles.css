@@ -64,7 +64,6 @@
     padding-bottom: 2rem;
     box-shadow: 0 10px 25px -10px rgba(51,71,91,0.25) !important;
     border-radius: 3px;
-    background-color: #E6FBFF;
 }
 .product-container:hover {
     cursor: pointer;

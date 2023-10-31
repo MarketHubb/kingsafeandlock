@@ -14,7 +14,7 @@ get_header(); ?>
                 <p>We offer an extensive range of safes for sale, from spacious gun vaults to compact jewelry safes. Our Houston showroom boasts the largest collection of residential and commercial safes, featuring over 300 in-stock models from renowned brands such as American Security.</p>
             </div>
             <div class="col-md-6">
-                <img src="<?php echo home_url() . '/wp-content/uploads/2021/11/KSL-Showroom-1.jpg'; ?>" alt="">
+                <img class="rounded shadow-sm" src="<?php echo home_url() . '/wp-content/uploads/2023/10/KSL-Showroom-2.jpg'; ?>" alt="">
             </div>
         </div>
     </div>
@@ -56,8 +56,8 @@ get_header(); ?>
                 'taxonomy' => 'product_cat',
                 'hide_empty' => true,
                 'parent' => $parent_product_cat->term_id,
-//                'orderby' => 'meta_value_num',
-//                'meta_key' => 'output_order',
+                'orderby' => 'meta_value_num',
+                'meta_key' => 'output_order',
             ));
 
             $cats .= '<ul class="list-group list-group-flush ms-0">';

@@ -30,20 +30,27 @@ if (is_shop() || is_archive() || is_singular('product')) {
 
 
 <!-- Product Cat Page -->
-<?php if (is_product_category()) { ?>
-    <?php $obj = get_queried_object(); ?>
-        <?php highlight_string("<?php\n\$obj =\n" . var_export($obj, true) . ";\n?>"); ?>
+<?php if (is_product_category()) {
+    $obj = get_queried_object();
+    $parent = get_term($obj->parent);
+    $term_meta = get_term_meta($obj->term_id);
+    $term_img = wp_get_attachment_url($term_meta['thumbnail_id'][0]);
+
+?>
 
     <!-- Hero -->
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6 pe-md-5">
-                <h1 class="fw-bold mb-1 text-blue font-oxygen"><?php echo $obj->name; ?></h1>
+                <?php if ($parent) { ?>
+                    <h4 class="text-uppercase font-oxygen text-secondary mb-1 letters-wide-xl"><?php echo $parent->name; ?></h4>
+                <?php } ?>
+                <h1 class="fw-bold my-1 letters-wide text-blue font-oxygen"><?php echo $obj->name; ?></h1>
                 <p class="lead fw-normal"></p>
                 <p><?php echo $obj->description; ?></p>
             </div>
-            <div class="col-md-6">
-                <img src="<?php echo home_url() . '/wp-content/uploads/2021/11/KSL-Showroom-1.jpg'; ?>" alt="">
+            <div class="col-md-6 text-center">
+                <img class="product-cat-hero-img" src="<?php echo $term_img; ?>" alt="">
             </div>
         </div>
     </div>

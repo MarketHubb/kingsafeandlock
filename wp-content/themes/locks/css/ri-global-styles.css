@@ -1,3 +1,13 @@
+.letters-wide {
+    letter-spacing: .05rem;
+}
+.letters-wide-xl {
+    letter-spacing: .2rem;
+}
+
+.product-cat-hero-img {
+    max-height: 300px;
+}
 .text-blue {
     color: #174368;
 }
@@ -71,6 +81,8 @@ header.is-scrolling #pre-nav .logo-fixed > a > h4 {
     padding: .3em 1em;
     font-size: .9em;
     line-height: 30px;
+    moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 .gform_button {
     line-height: 1.5 !important;

@@ -28,9 +28,18 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 <div class="col-md-4 text-center mb-3">
     <div class="product-container h-100 px-4 py-5">
         <h4 class="product-list-name text-black font-weight-bold"><?php echo get_the_title($post->ID); ?></h4>
+        <?php if (get_field('post_product_gun_burglary_rating')) { ?>
+            <p><?php echo get_field('post_product_gun_burglary_rating'); ?></p>
+        <?php } ?>
         <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" />
-        <div class="text-center inquiry-container mt-3">
-            <?php echo get_product_inquiry_btn($post->ID, 'Product Inquiry <i class="fas fa-long-arrow-right ml-1"></i>'); ?>
+        <div class="row mt-5 justify-content-center align-items-center inquiry-container mt-3">
+            <div class="col-md-12 col-lg-6">
+                <?php echo get_product_inquiry_btn($post->ID, 'Get Sale Pricing'); ?>
+            </div>
+            <div class="col-md-12 col-lg-6 mt-4 mt-lg-0">
+                <a class="fw-semibold" href="<?php echo get_permalink($post->ID); ?>">View Safe Details <i class="fas fa-long-arrow-right ms-1"></i></a>
+            </div>
+
         </div>
         <a href="<?php echo get_permalink($post->ID); ?>" class="stretched-link"></a>
     </div>
