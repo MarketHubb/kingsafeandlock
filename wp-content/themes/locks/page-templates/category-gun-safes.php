@@ -7,19 +7,17 @@ get_header(); ?>
 <!-- Brought over -->
 <?php
 $attributes = ['msrp', 'capacity-total', 'weight', 'fire-rating', 'exterior-depth', 'exterior-width', 'exterior-height'];
-?>
-
-<?php
 $tax_term = 'product_cat';
-$gun_safe_terms = [59,60, 36,38,61];
+$gun_safe_terms = [59, 60, 36, 38, 61];
 $content = '';
 foreach ($gun_safe_terms as $term_id) {
+
     $term =  get_terms([
-       'taxonomy' => $tax_term,
-       'include' => $term_id
+        'taxonomy' => $tax_term,
+        'include' => $term_id
     ]);
-    $acf_field_param = $tax_term . '_' . $term[0]->term_id;
-    $cat_name = 'AMSEC ' . get_field('categoy_safes_category_name', $acf_field_param);
+
+    $cat_name = 'AMSEC ' . get_field('categoy_safes_category_name', $term[0]);
 
     if ($term_id !== 61) {
         $cat_attr = get_field('category_safes_fire_rating', $acf_field_param) . ' Minute Fire Proof Gun Safes';
@@ -51,24 +49,27 @@ foreach ($gun_safe_terms as $term_id) {
             ),
         ),
     ];
+?>
 
-    $query = new WP_Query($query_args);
+    <?php $query = new WP_Query($query_args); ?>
 
-    if ($query->have_posts()) : ?>
+    <?php if ($query->have_posts()) : ?>
 
         <div class="container">
 
             <div class="row product-grids-container">
 
-            <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                <?php get_template_part('template-parts/safes/content', 'grid-list', ['attributes' => $attributes]); ?>
+                    <?php get_template_part('template-parts/safes/content', 'grid-list', ['attributes' => $attributes]); ?>
 
-            <?php endwhile; wp_reset_postdata(); ?>
+                <?php endwhile; ?>
+
+                <?php wp_reset_postdata(); ?>
 
             </div>
 
-    </div>
+        </div>
 
     <?php endif; ?>
 

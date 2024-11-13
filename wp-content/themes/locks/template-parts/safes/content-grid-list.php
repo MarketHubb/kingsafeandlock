@@ -1,8 +1,6 @@
 <?php $attributes = $args['attributes']; ?>
 
 <div class="col-12 col-md-6 col-lg-4 mb-3 product-list-item mix"
-     data-series="<?php echo substr(get_the_title(), 0, 2); ?>"
-     data-name="<?php echo array_shift($title_array); ?>"
 
     <?php foreach ($attributes as $attribute) { ?>
         <?php $val = get_safe_attribute_values($post->ID, $attribute); ?>
